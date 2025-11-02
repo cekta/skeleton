@@ -1,0 +1,12 @@
+/vendor
+/composer.lock
+
+# used on develop for testing without commit
+# composer.json
+#   "repositories": [
+#    {
+#      "type": "path",
+#      "url": "./framework"
+#    }
+#  ],
+/framework
