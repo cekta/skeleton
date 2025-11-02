@@ -1,5 +1,6 @@
 /vendor
 /composer.lock
+/runtime
 
 # used on develop for testing without commit
 # composer.json
