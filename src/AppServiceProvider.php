@@ -37,6 +37,8 @@ class AppServiceProvider implements ServiceProvider
         $app->param(ContainerInterface::class, new Lazy(function (ContainerInterface $container) {
             return $container;
         }));
+        
+        $app->setContainerFilename(__DIR__ . '/../runtime/Container.php');
 
         return $app;
     }

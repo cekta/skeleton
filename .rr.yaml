@@ -8,6 +8,7 @@ server:
 
 http:
   address: 0.0.0.0:8080
+  pool.debug: true
 
 # do not use development mode in production
 logs:
