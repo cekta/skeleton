@@ -7,6 +7,7 @@ namespace App;
 use Cekta\DI\Lazy;
 use Cekta\Framework\Application;
 use Cekta\Framework\DiscoverServiceProvider;
+use Cekta\Framework\Pipeline;
 use Cekta\Framework\ServiceProvider;
 use Psr\Container\ContainerInterface;
 
@@ -21,7 +22,11 @@ class AppServiceProvider implements ServiceProvider
     public function __construct()
     {
         $items = array_keys(require __DIR__ . '/../vendor/composer/autoload_classmap.php');
-        $this->providers[] = new DiscoverServiceProvider($items);
+        $this->providers[] = new DiscoverServiceProvider(
+            array_filter($items, function (string $item): bool {
+                return $item !== Pipeline::class; // exclude
+            })
+        );
     }
 
     public function register(Application $app): Application
@@ -37,7 +42,7 @@ class AppServiceProvider implements ServiceProvider
         $app->param(ContainerInterface::class, new Lazy(function (ContainerInterface $container) {
             return $container;
         }));
-        
+
         $app->setContainerFilename(__DIR__ . '/../runtime/Container.php');
 
         return $app;
