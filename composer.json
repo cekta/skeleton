@@ -1,4 +1,5 @@
 {
+  "name": "cekta/framework",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
