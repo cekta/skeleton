@@ -23,7 +23,6 @@ class RoutingServiceProvider implements ServiceProvider
     {
         $router = new Router();
         $router->get('/', \App\Hello::class);
-        $router->post('/post', \App\Hello::class);
         return $router;
     }
 }
