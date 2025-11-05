@@ -13,6 +13,6 @@ class Hello implements RequestHandlerInterface
 {
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return Response::json('hello from cekta');
+        return Response::json(['message' => 'hello from cekta']);
     }
 }
