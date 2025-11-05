@@ -1,6 +1,6 @@
-intall:
+install:
 	docker compose run --rm app composer install
-dev: intall
+dev: install
 	docker compose up --build --remove-orphans
 
 sh:

@@ -14,10 +14,6 @@ use Psr\Container\ContainerInterface;
 class AppServiceProvider implements ServiceProvider
 {
     private array $providers = [];
-    private array $alias = [
-        \Psr\Http\Server\RequestHandlerInterface::class => \Cekta\Framework\HttpApplication::class,
-        \Cekta\Routing\MatcherInterface::class => \App\RoutingProviderMustBeChanged::class,
-    ];
 
     public function __construct()
     {
@@ -27,6 +23,7 @@ class AppServiceProvider implements ServiceProvider
                 return $item !== Pipeline::class; // exclude
             })
         );
+        $this->providers[] = new RoutingServiceProvider();
     }
 
     public function register(Application $app): Application
@@ -35,16 +32,13 @@ class AppServiceProvider implements ServiceProvider
             $app = $provider->register($app);
         }
 
-        foreach ($this->alias as $name => $target) {
-            $app->alias($name, $target);
-        }
-
-        $app->param(ContainerInterface::class, new Lazy(function (ContainerInterface $container) {
-            return $container;
-        }));
-
-        $app->setContainerFilename(__DIR__ . '/../runtime/Container.php');
-
-        return $app;
+        return $app->param(
+            ContainerInterface::class,
+            new Lazy(function (ContainerInterface $container) {
+                return $container;
+            })
+        )
+            ->alias(\Psr\Http\Server\RequestHandlerInterface::class, \Cekta\Framework\HttpApplication::class)
+            ->setContainerFilename(__DIR__ . '/../runtime/Container.php');
     }
 }
