@@ -7,7 +7,7 @@ skeleton for api service DRAFT
 ```
 git clone https://github.com/cekta/skeleton.git {you_project_name}
 cd {you_project_name}
-make dev
+make up
 ```
 
 requirements to run:

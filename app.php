@@ -18,4 +18,3 @@ if (!array_key_exists($mode, $dispatchers)) {
 }
 
 $dispatchers[$mode]->serve(new AppServiceProvider());
-

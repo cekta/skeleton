@@ -1,15 +1,18 @@
-install:
-	docker compose run --rm app composer install
-dev: install
-	docker compose up --build --remove-orphans
+up:
+	docker compose up -d --remove-orphans
 
-sh:
-	docker compose run --rm app sh
+sh: up
+	docker compose exec app bash
 
-update: 
-	docker compose run --rm app composer update
-da:
-	docker compose run --rm app composer dumpautoload
+refresh:
+	docker compose down
+	docker compose build
+	docker compose up -d --remove-orphans
+
+restart:
+	docker comppose stop
+	docker compose up -d --remove-orphans
+
 image:
 	# build docker image ready to deploy
 

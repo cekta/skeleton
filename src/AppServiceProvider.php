@@ -10,20 +10,18 @@ use Cekta\Framework\DiscoverServiceProvider;
 use Cekta\Framework\Pipeline;
 use Cekta\Framework\ServiceProvider;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
 class AppServiceProvider implements ServiceProvider
 {
+    
     private array $providers = [];
 
     public function __construct()
     {
-        $items = array_keys(require __DIR__ . '/../vendor/composer/autoload_classmap.php');
-        $this->providers[] = new DiscoverServiceProvider(
-            array_filter($items, function (string $item): bool {
-                return $item !== Pipeline::class; // exclude
-            })
-        );
-        $this->providers[] = new RoutingServiceProvider();
+        $this->providers[] = $this->createDiscoverServiceProvider();
+        $this->providers[] = new HttpServiceProvider();
+        $this->providers[] = new CliServiceProvider();
     }
 
     public function register(Application $app): Application
@@ -32,13 +30,20 @@ class AppServiceProvider implements ServiceProvider
             $app = $provider->register($app);
         }
 
-        return $app->param(
-            ContainerInterface::class,
-            new Lazy(function (ContainerInterface $container) {
-                return $container;
-            })
-        )
-            ->alias(\Psr\Http\Server\RequestHandlerInterface::class, \Cekta\Framework\HttpApplication::class)
+        return $app
+            ->param(
+                ContainerInterface::class,
+                new Lazy(function (ContainerInterface $container) {
+                    return $container;
+                })
+            )
             ->setContainerFilename(__DIR__ . '/../runtime/Container.php');
+    }
+
+    private function createDiscoverServiceProvider(): ServiceProvider
+    {
+        $items = array_keys(require __DIR__ . '/../vendor/composer/autoload_classmap.php');
+        $discover = new DiscoverServiceProvider($items);
+        return $discover->containerImplement(RequestHandlerInterface::class, [Pipeline::class]);
     }
 }

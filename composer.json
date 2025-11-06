@@ -10,6 +10,12 @@
       "App\\Runtime\\": "runtime/"
     }
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./framework"
+    }
+  ],
   "config": {
     "optimize-autoloader": true
   }

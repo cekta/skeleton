@@ -9,10 +9,10 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-class Hello implements RequestHandlerInterface
+class Welcome implements RequestHandlerInterface
 {
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return Response::json(['message' => 'hello from cekta']);
+        return Response::json(['message' => 'welcome to cekta']);
     }
 }
