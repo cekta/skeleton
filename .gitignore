@@ -1,13 +1,14 @@
 /vendor
 /composer.lock
 /runtime
+/db.sqlite
 
 # used on develop for testing without commit
 # composer.json
-#   "repositories": [
+#"repositories": [
 #    {
 #      "type": "path",
-#      "url": "./framework"
+#      "url": "./local/cekta/framework"
 #    }
-#  ],
-/framework
+#  ]
+/local

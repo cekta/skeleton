@@ -1,7 +1,7 @@
 up:
 	docker compose up -d --remove-orphans
 
-sh: up
+shell: up
 	docker compose exec app bash
 
 refresh:
