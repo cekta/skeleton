@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 use Cekta\DI\Compiler;
-use Cekta\DI\Lazy;
-use Cekta\DI\Rule\Chain;
-use Cekta\DI\Rule\Equal;
+use Cekta\DI\LazyClosure;
 use Cekta\Framework\ContainerFactory;
 use Cekta\Framework\HttpApplication;
 use Cekta\Framework\Pipeline;
@@ -25,6 +23,7 @@ class Project implements ContainerFactory
     public readonly string $project_dir;
     public readonly string $container_file;
     public readonly string $container_fqcn;
+    public readonly int $container_permission;
     private array $params = [];
     private readonly string $project_runtime;
     private $tag_migrations = 'cekta_migrator_migrations';
@@ -38,6 +37,7 @@ class Project implements ContainerFactory
         $this->project_dir = realpath(__DIR__ . '/..');
         $this->container_file = $this->project_dir . '/runtime/Container.php';
         $this->container_fqcn = 'App\\Runtime\\Container';
+        $this->container_permission = 0777;
         $this->project_runtime = $this->project_dir . '/runtime/project.php';
 
         $this->providers[] = new CliServiceProvider($this->tag_migrations);
@@ -61,16 +61,16 @@ class Project implements ContainerFactory
         return true; // you logic, now every time at start
     }
 
-    public function params(): array
+    private function params(): array
     {
         if (empty($this->params)) {
             $runtime = $this->readRuntime();
             $this->params = [
-                'db_dsn' => 'sqlite:db.sqlite',
-                'db_username' => null,
-                'db_password' => null,
-                'db_options' => null,
-                ContainerInterface::class => new Lazy(function (ContainerInterface $container) {
+                'dsn' => 'sqlite:db.sqlite',
+                'username' => null,
+                'password' => null,
+                'options' => null,
+                ContainerInterface::class => new LazyClosure(function (ContainerInterface $container) {
                     return $container;
                 }),
                 Router::class => new RouterLoader(),
@@ -100,15 +100,7 @@ class Project implements ContainerFactory
         foreach ($this->providers as $provider) {
             $provider_configuration += $provider->register();
         }
-
-        $rules = [
-            new Equal(\PDO::class, [
-                'dsn' => 'db_dsn',
-                'username' => 'db_username',
-                'password' => 'db_password',
-                'options' => 'db_options',
-            ]),
-        ];
+        
         $content = new Compiler(
             containers: array_merge(
                 $discover['containers'],
@@ -121,12 +113,12 @@ class Project implements ContainerFactory
                 ...($provider_configuration['alias'] ?? [])
             ],
             fqcn: $this->container_fqcn,
-            rule: new Chain(...array_merge($rules, ($provider_configuration['rules'] ?? []))),
         )->compile();
         
         if (file_put_contents($this->container_file, $content, LOCK_EX) === false) {
             throw new \RuntimeException("$this->container_file cant compile");
         }
+        chmod($this->container_file, $this->container_permission);
     }
 
     private function writeRuntime(array $data): void

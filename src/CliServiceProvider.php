@@ -4,24 +4,20 @@ declare(strict_types=1);
 
 namespace App;
 
-use Cekta\DI\Lazy;
-use Cekta\DI\Rule\Equal;
-use Cekta\DI\Rule\StartWith;
+use Cekta\DI\LazyClosure;
 use Cekta\Framework\ServiceProvider;
 use Cekta\Migrator\Command\Migrate;
 use Cekta\Migrator\Command\Rollback;
+use Cekta\Migrator\MigrationLocator;
 use Cekta\Migrator\Storage;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 
-class CliServiceProvider implements ServiceProvider
+readonly class CliServiceProvider implements ServiceProvider
 {
-    
-    private string $cekta_migrator_migrate_name = 'cekta_migrator_migrate_name';
-    private string $cekta_migrator_rollback_name = 'cekta_migrator_rollback_name';
     public function __construct(
-        private string $tag_migrations
+        private string $tag_migrations,
     ) {
     }
 
@@ -31,19 +27,19 @@ class CliServiceProvider implements ServiceProvider
     public function params(): array
     {
         return [
-            Application::class => new Lazy(function (ContainerInterface $container) {
+            Application::class => new LazyClosure(function (ContainerInterface $container) {
                 $console = new Application();
                 $console->setCommandLoader(new ContainerCommandLoader($container, [
-                    $container->get($this->cekta_migrator_migrate_name) => Migrate::class,
-                    $container->get($this->cekta_migrator_rollback_name) => Rollback::class,
+                    'migrate' => Migrate::class,
+                    'migration:rollback' => Rollback::class,
                 ]));
                 return $console;
             }),
-            $this->cekta_migrator_migrate_name => 'migrate',
-            $this->cekta_migrator_rollback_name => 'migration:rollback',
-            Storage::class => new Lazy(function (ContainerInterface $container) {
-                return new Storage\DB($container->get(\PDO::class));
-            }),
+            Storage\DB::class . '$table_name' => 'migrations',
+            Storage\DB::class . '$column_id' => 'id',
+            Storage\DB::class . '$column_class' => 'class',
+            Migrate::class . '$name' => 'migrate',
+            Rollback::class . '$name' => 'migration:rollback',
         ];
     }
 
@@ -52,24 +48,16 @@ class CliServiceProvider implements ServiceProvider
      */
     public function register(): array
     {
-        $rules = [
-            new StartWith('Cekta\\Migrator\\', [
-                '...migrations' => $this->tag_migrations,
-            ]),
-            new Equal(Migrate::class, [
-                'name' => $this->cekta_migrator_migrate_name,
-            ]),
-            new Equal(Rollback::class, [
-                'name' => $this->cekta_migrator_rollback_name,
-            ])
-        ];
         return [
             'containers' => [
                 Migrate::class,
                 Rollback::class,
                 \PDO::class,
             ],
-            'rules' => $rules,
+            'alias' => [
+                Storage::class => Storage\DB::class,
+                '...' . MigrationLocator::class . '$migrations' => $this->tag_migrations,
+            ],
         ];
     }
 }

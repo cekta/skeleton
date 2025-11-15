@@ -8,14 +8,12 @@ use Cekta\DI\Lazy;
 use Cekta\Framework\Routing\Router;
 use Psr\Container\ContainerInterface;
 
-class RouterLoader extends Lazy
+class RouterLoader implements Lazy
 {
-    public function __construct()
+    public function load(ContainerInterface $container): mixed
     {
-        parent::__construct(function (ContainerInterface $container) {
-            $router = new Router();
-            $router->get('/', \App\Welcome::class);
-            return $router;
-        });
+        $router = new Router();
+        $router->get('/', \App\Welcome::class);
+        return $router;
     }
 }
