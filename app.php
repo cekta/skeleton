@@ -26,4 +26,4 @@ if (!array_key_exists($mode, $dispatchers)) {
     throw new RuntimeException("$mode invalid");
 }
 
-$dispatchers[$mode]->serve(new Project()->prepare());
+$dispatchers[$mode]->serve(new Project($_ENV));

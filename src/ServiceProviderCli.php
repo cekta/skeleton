@@ -14,10 +14,10 @@ use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 
-readonly class CliServiceProvider implements ServiceProvider
+readonly class ServiceProviderCli implements ServiceProvider
 {
     public function __construct(
-        private string $tag_migrations,
+        private array $migrations,
     ) {
     }
 
@@ -40,6 +40,7 @@ readonly class CliServiceProvider implements ServiceProvider
             Storage\DB::class . '$column_class' => 'class',
             Migrate::class . '$name' => 'migrate',
             Rollback::class . '$name' => 'migration:rollback',
+            'cekta_migrator_migrations' => $this->migrations,
         ];
     }
 
@@ -52,11 +53,10 @@ readonly class CliServiceProvider implements ServiceProvider
             'containers' => [
                 Migrate::class,
                 Rollback::class,
-                \PDO::class,
             ],
             'alias' => [
                 Storage::class => Storage\DB::class,
-                '...' . MigrationLocator::class . '$migrations' => $this->tag_migrations,
+                '...' . MigrationLocator::class . '$migrations' => 'cekta_migrator_migrations',
             ],
         ];
     }
