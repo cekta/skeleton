@@ -1,5 +1,5 @@
 up:
-	docker compose up -d --remove-orphans
+	docker compose up -d --remove-orphans --build
 
 shell: up
 	docker compose exec app bash
@@ -9,11 +9,8 @@ refresh:
 	docker compose build
 	docker compose up -d --remove-orphans
 
-restart:
-	docker comppose stop
-	docker compose up -d --remove-orphans
-
 image:
-	# build docker image ready to deploy
-
-	# rr.yaml must be changed (disable debug and develop mode)
+	docker build --target prod -t cekta-app .
+	# maybe set you custom TAG ?
+	# you can modify build arg --build-arg RR_LOGS_LEVEL_ARG=debug or overwrite env on runtime!!! see image
+	# docker run -p 8090:8080 --rm cekta-app:latest # on port 8090 prod api

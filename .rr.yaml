@@ -1,17 +1,20 @@
 version: "3"
 
 rpc:
-  listen: tcp://127.0.0.1:6001
+  listen: ${RR_RPC_LISTEN:-tcp://127.0.0.1:6001}
+  
+status:
+  address: ${RR_STATUS_ADDRESS:-127.0.0.1:2114}
 
 server:
-  command: "php app.php"
+  command: "${RR_SERVER_COMMAND:-php app.php}"
 
 http:
-  address: 0.0.0.0:8080
-  pool.debug: true
+  address: ${RR_HTTP_ADDRESS:-0.0.0.0:8080}
+  pool:
+    debug: ${RR_POOL_DEBUG:-true}
 
-# do not use development mode in production
 logs:
-  encoding: console
-  level: debug
-  mode: development
+  mode: ${RR_LOGS_MODE:-development}
+  encoding: ${RR_LOGS_ENCODING:-console}
+  level: ${RR_LOGS_LEVEL:-debug}
