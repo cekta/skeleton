@@ -12,7 +12,7 @@ RUN install-php-extensions @composer \
 #!/usr/bin/env bash
 
 composer install
-
+CEKTA_MODE=compile ./app.php
 exec rr serve
 EOF
 CMD ["/usr/bin/app-dev"]
