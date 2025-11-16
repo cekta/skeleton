@@ -16,9 +16,8 @@ use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 
 readonly class ServiceProviderCli implements ServiceProvider
 {
-    public function __construct(
-        private array $migrations,
-    ) {
+    public function __construct(private array $discover)
+    {
     }
 
     /**
@@ -40,7 +39,7 @@ readonly class ServiceProviderCli implements ServiceProvider
             Storage\DB::class . '$column_class' => 'class',
             Migrate::class . '$name' => 'migrate',
             Rollback::class . '$name' => 'migration:rollback',
-            'cekta_migrator_migrations' => $this->migrations,
+            '...' . MigrationLocator::class . '$migrations' => $this->discover['tags']['cekta_migrator_migrations'] ?? [],
         ];
     }
 
@@ -56,7 +55,6 @@ readonly class ServiceProviderCli implements ServiceProvider
             ],
             'alias' => [
                 Storage::class => Storage\DB::class,
-                '...' . MigrationLocator::class . '$migrations' => 'cekta_migrator_migrations',
             ],
         ];
     }

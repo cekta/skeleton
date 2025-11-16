@@ -70,12 +70,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "4e4fa92ac6c20e7c8047777c561e136292cceee9"
+                "reference": "4233e23b75f14706a8b114056e46d7fe0fcb5456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/4e4fa92ac6c20e7c8047777c561e136292cceee9",
-                "reference": "4e4fa92ac6c20e7c8047777c561e136292cceee9",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/4233e23b75f14706a8b114056e46d7fe0fcb5456",
+                "reference": "4233e23b75f14706a8b114056e46d7fe0fcb5456",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +110,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2025-11-15T19:10:42+00:00"
+            "time": "2025-11-16T23:11:04+00:00"
         },
         {
             "name": "cekta/migrator",
