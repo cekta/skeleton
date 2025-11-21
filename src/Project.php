@@ -6,7 +6,7 @@ namespace App;
 
 use Cekta\DI\Compiler;
 use Cekta\Framework\FilePHP;
-use Cekta\Framework\Pipeline;
+use Cekta\Framework\HTTP\Pipeline;
 use Cekta\Framework\ProjectDiscovery;
 use Cekta\Framework\ServiceProvider;
 use Cekta\Framework\ServiceProviderChain;

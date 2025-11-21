@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
-use Cekta\Framework\Response;
+use Cekta\Framework\HTTP\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

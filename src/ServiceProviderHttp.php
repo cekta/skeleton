@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App;
 
 use Cekta\DI\LazyClosure;
-use Cekta\Framework\HttpApplication;
-use Cekta\Framework\Routing\NotAllowed;
-use Cekta\Framework\Routing\NotFound;
+use Cekta\Framework\HTTP\Application;
+use Cekta\Framework\HTTP\NotAllowed;
+use Cekta\Framework\HTTP\NotFound;
 use Cekta\Framework\ServiceProvider;
 use Cekta\Routing\MatcherInterface;
 use Cekta\Routing\Nikic\Matcher;
@@ -33,7 +33,7 @@ class ServiceProviderHttp implements ServiceProvider
         return [
             'containers' => [],
             'alias' => [
-                RequestHandlerInterface::class => HttpApplication::class,
+                RequestHandlerInterface::class => Application::class,
                 MatcherInterface::class => Matcher::class,
             ],
             'singletons' => [
