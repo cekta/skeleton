@@ -6,7 +6,7 @@ RUN install-php-extensions sockets
 
 FROM base AS dev
 RUN install-php-extensions @composer \
-    && apk add --no-cache bash make \
+    && apk add --no-cache make \
     && cat <<'EOF' > /usr/bin/app-dev \
     && chmod +x /usr/bin/app-dev
 #!/usr/bin/env bash

@@ -1,4 +1,4 @@
-.PHONY: dev up shell refresh image compile
+.PHONY: dev up shell refresh image compile checks
 
 dev:
 	docker compose up -d --remove-orphans --build
@@ -6,8 +6,8 @@ dev:
 up:
 	docker compose up -d --remove-orphans
 
-shell: up
-	docker compose exec app bash
+shell:
+	docker compose run --rm -it app sh
 
 refresh:
 	docker compose down

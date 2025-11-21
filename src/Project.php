@@ -13,6 +13,7 @@ use Cekta\Framework\ServiceProviderChain;
 use Cekta\Migrator\Migration;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use RuntimeException;
 
 readonly class Project implements \Cekta\Framework\Project
 {
@@ -41,6 +42,9 @@ readonly class Project implements \Cekta\Framework\Project
 
     public function createContainer(): ContainerInterface
     {
+        if (!class_exists($this->container_fqcn)) {
+            throw new RuntimeException("$this->container_fqcn class not found, maybe need generate?");
+        }
         return new ($this->container_fqcn)($this->provider->params());
     }
 
@@ -63,7 +67,7 @@ readonly class Project implements \Cekta\Framework\Project
             factories: $provider_configuration['factories'] ?? [],
         )->compile();
         if (file_put_contents($this->container_file, $content, LOCK_EX) === false) {
-            throw new \RuntimeException("$this->container_file cant compile");
+            throw new RuntimeException("$this->container_file cant compile");
         }
         chmod($this->container_file, $this->container_permission);
     }

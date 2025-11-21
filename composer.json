@@ -1,6 +1,5 @@
 {
   "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "cekta/framework": "@dev",
     "cekta/migrator": "dev-master",
@@ -14,5 +13,11 @@
   },
   "config": {
     "optimize-autoloader": true
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./local/cekta/framework"
+    }
+  ]
 }
