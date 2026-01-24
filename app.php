@@ -3,29 +3,23 @@
 
 declare(strict_types=1);
 
-use App\Project;
+use App\DI\Project;
 use Cekta\Framework\Dispatcher;
-use Spiral\RoadRunner\Environment;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+$mode = $_ENV['CEKTA_MODE'] ?? 'cli';
+
 /** @var array<string, Dispatcher> $dispatchers */
 $dispatchers = [
-    Environment\Mode::MODE_HTTP => new Dispatcher\HTTP(),
-    'cli' => new Dispatcher\Cli(),
-    'compile' => new Dispatcher\Compile(),
+    'build' => new Dispatcher\Build(),
+    'rr' => new Dispatcher\RR(),
+    'cli' => new Dispatcher\CLI(),
 ];
-
-if (!empty($_ENV['CEKTA_MODE'])) {
-    $mode = $_ENV['CEKTA_MODE'];
-} elseif (!empty(Environment::fromGlobals()->getMode())) {
-    $mode = Environment::fromGlobals()->getMode();
-} else {
-    $mode = php_sapi_name();
-}
 
 if (!array_key_exists($mode, $dispatchers)) {
     throw new RuntimeException("$mode run_mode invalid");
 }
 
-$dispatchers[$mode]->serve(new Project($_ENV));
+$project = new Project($_ENV);
+$dispatchers[$mode]->dispatch($project);

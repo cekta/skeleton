@@ -8,6 +8,8 @@ status:
 
 server:
   command: "${RR_SERVER_COMMAND:-php app.php}"
+  env:
+    CEKTA_MODE: rr
 
 http:
   address: ${RR_HTTP_ADDRESS:-0.0.0.0:8080}

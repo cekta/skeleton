@@ -9,10 +9,10 @@ RUN install-php-extensions @composer \
     && apk add --no-cache make \
     && cat <<'EOF' > /usr/bin/app-dev \
     && chmod +x /usr/bin/app-dev
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 composer install
-CEKTA_MODE=compile ./app.php
+./app.php migrate
 exec rr serve
 EOF
 CMD ["/usr/bin/app-dev"]
@@ -21,9 +21,9 @@ FROM dev AS builder
 COPY composer.json composer.lock ./
 RUN composer install
 COPY ./ ./
-RUN make checks \
+RUN composer before-build-checks \
     && composer install -a --no-dev # remove dev from build \
-    && CEKTA_MODE=compile ./app.php # finish compile
+    && CEKTA_MODE=build ./app.php # finish compile
 
 FROM base AS prod
 ARG RR_SERVER_COMMAND_ARG="php -d opcache.enable_cli=1 app.php"

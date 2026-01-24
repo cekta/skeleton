@@ -4,6 +4,7 @@
   "require": {
     "cekta/framework": "@dev",
     "cekta/migrator": "dev-master",
+    "cekta/di": "dev-master",
     "ext-pdo": "*"
   },
   "autoload": {
@@ -12,7 +13,21 @@
       "App\\Runtime\\": "runtime/"
     }
   },
+  "scripts": {
+    "post-autoload-dump": [
+      "CEKTA_MODE=build php app.php"
+    ],
+    "before-build-check": [
+      "echo check code style, or static analyze, or run unit tests, maybe run this target pre merge, runed on build prod"
+    ]
+  },
   "config": {
     "optimize-autoloader": true
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./local/cekta/framework"
+    }
+  ]
 }
