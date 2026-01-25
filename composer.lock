@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65d6c0c3b75ab201d97239b0bc4a2d43",
+    "content-hash": "ea8fdf01d59a8a7db4a144a5e7286314",
     "packages": [
         {
             "name": "cekta/di",
@@ -67,11 +67,17 @@
         },
         {
             "name": "cekta/framework",
-            "version": "dev-main",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cekta/framework.git",
+                "reference": "237b744e4f55af42b8dc9509173c308926437ae8"
+            },
             "dist": {
-                "type": "path",
-                "url": "./local/cekta/framework",
-                "reference": "6b01d3d1179d2a5b7e8b70302f4202210fcc0854"
+                "type": "zip",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/237b744e4f55af42b8dc9509173c308926437ae8",
+                "reference": "237b744e4f55af42b8dc9509173c308926437ae8",
+                "shasum": ""
             },
             "require": {
                 "cekta/di": "@stable",
@@ -82,12 +88,14 @@
                 "spiral/roadrunner-http": "@stable",
                 "symfony/console": "@stable"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Cekta\\Framework\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0-only"
             ],
@@ -98,9 +106,11 @@
                 }
             ],
             "description": "small, fast framework for create API",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/cekta/framework/issues",
+                "source": "https://github.com/cekta/framework/tree/master"
+            },
+            "time": "2026-01-24T23:54:19+00:00"
         },
         {
             "name": "cekta/migrator",

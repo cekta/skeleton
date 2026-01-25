@@ -23,11 +23,5 @@
   },
   "config": {
     "optimize-autoloader": true
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "./local/cekta/framework"
-    }
-  ]
+  }
 }
