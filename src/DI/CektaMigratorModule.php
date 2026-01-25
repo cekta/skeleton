@@ -5,16 +5,17 @@ declare(strict_types=1);
 namespace App\DI;
 
 use Cekta\DI\Module;
-use Cekta\Framework\CLI\Application;
-use Cekta\Framework\CLI\ContainerCommandLoader;
+use Cekta\Migrator\Migration;
+use Cekta\Migrator\MigrationLocator;
+use Cekta\Migrator\Storage;
 use ReflectionClass;
 
-class CLIModule implements Module
+class CektaMigratorModule implements Module
 {
     private array $state;
-
+    
     public function __construct(
-        private readonly array $command_map = []
+        private readonly string $storage = Storage\DB::class
     ) {
     }
 
@@ -23,8 +24,9 @@ class CLIModule implements Module
      */
     public function onCreate(string $encoded_module): array
     {
+        $state = json_decode($encoded_module, true);
         return [
-            ContainerCommandLoader::class . '$commandMap' => $this->command_map,
+            '...' . MigrationLocator::class . '$migrations' => $state[Migration::class] ?? [],
         ];
     }
 
@@ -33,10 +35,13 @@ class CLIModule implements Module
      */
     public function onBuild(string $encoded_module): array
     {
+        $state = json_decode($encoded_module, true);
         return [
             'entries' => [
-                Application::class,
-                ...(array_values($this->command_map)),
+                ...($state[Migration::class] ?? []),
+            ],
+            'alies' => [
+                Storage::class => $this->storage,
             ],
         ];
     }
@@ -46,6 +51,12 @@ class CLIModule implements Module
      */
     public function discover(ReflectionClass $class): void
     {
+        if (
+            $class->implementsInterface(Migration::class)
+            && $class->isInstantiable()
+        ) {
+            $this->state[Migration::class][] = $class->name;
+        }
     }
 
     /**

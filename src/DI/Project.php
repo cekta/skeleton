@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\DI;
 
 use Cekta\DI\ClassLoader\Composer;
+use Cekta\Migrator\Command\Migrate;
+use Cekta\Migrator\Command\Rollback;
 
 class Project extends \Cekta\DI\Project
 {
@@ -14,7 +16,13 @@ class Project extends \Cekta\DI\Project
             [
                 new AppModule($this->env),
                 new HTTPModule(),
-                new CLIModule(),
+                new CLIModule(
+                    command_map: [
+                        'migrate' => Migrate::class,
+                        'migration:rollback' => Rollback::class,
+                    ],
+                ),
+                new CektaMigratorModule(),
             ],
             __DIR__ . '/../../runtime/AppContainer.php',
             'App\\Runtime\\AppContainer',

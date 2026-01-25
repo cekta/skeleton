@@ -5,7 +5,8 @@
     "cekta/framework": "@dev",
     "cekta/migrator": "dev-master",
     "cekta/di": "dev-master",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*"
   },
   "autoload": {
     "psr-4": {
@@ -14,8 +15,10 @@
     }
   },
   "scripts": {
-    "post-autoload-dump": [
-      "CEKTA_MODE=build php app.php"
+    "build": [
+      "@composer dumpautoload",
+      "CEKTA_MODE=build php app.php",
+      "echo Generated optimized Container and discover files"
     ],
     "before-build-check": [
       "echo check code style, or static analyze, or run unit tests, maybe run this target pre merge, runed on build prod"
