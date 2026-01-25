@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\DI;
 
 use App\Welcome;
-use Cekta\DI\LazyClosure;
+use Cekta\DI\Lazy;
 use Cekta\DI\Module;
 use Cekta\Framework\HTTP\Application;
 use Cekta\Framework\HTTP\NotAllowed;
@@ -14,16 +14,18 @@ use Cekta\Routing\MatcherInterface;
 use Cekta\Routing\Nikic\Matcher;
 use Cekta\Routing\Nikic\Router;
 use Psr\Http\Server\RequestHandlerInterface;
+use ReflectionClass;
 
 class HTTPModule implements Module
 {
+    private array $state;
     /**
      * @inheritDoc
      */
     public function onCreate(string $encoded_module): array
     {
         return [
-            Router::class => new LazyClosure(function () {
+            Router::class => new Lazy\Closure(function () {
                 $router = new Router(NotFound::class, NotAllowed::class);
                 $router->get('/', Welcome::class);
                 // your handlers must be registered here
@@ -56,19 +58,21 @@ class HTTPModule implements Module
     /**
      * @inheritDoc
      */
-    public function onDiscover(array $classes): string
+    public function discover(ReflectionClass $class): void
     {
-        $state = [
-            RequestHandlerInterface::class => [],
-        ];
-        foreach ($classes as $class) {
-            if (
-                $class->implementsInterface(RequestHandlerInterface::class)
-                && $class->isInstantiable()
-            ) {
-                $state[RequestHandlerInterface::class][] = $class->name;
-            }
+        if (
+            $class->implementsInterface(RequestHandlerInterface::class)
+            && $class->isInstantiable()
+        ) {
+            $this->state[RequestHandlerInterface::class][] = $class->name;
         }
-        return json_encode($state, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getEncodedModule(): string
+    {
+        return json_encode($this->state, JSON_PRETTY_PRINT);
     }
 }

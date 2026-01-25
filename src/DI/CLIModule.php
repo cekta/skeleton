@@ -12,10 +12,13 @@ use Cekta\Migrator\Command\Rollback;
 use Cekta\Migrator\Migration;
 use Cekta\Migrator\MigrationLocator;
 use Cekta\Migrator\Storage;
+use ReflectionClass;
 use Symfony\Component\Console\Command\Command;
 
 class CLIModule implements Module
 {
+    private array $state;
+    
     /**
      * @inheritDoc
      */
@@ -52,30 +55,29 @@ class CLIModule implements Module
     /**
      * @inheritDoc
      */
-    public function onDiscover(array $classes): string
+    public function discover(ReflectionClass $class): void
     {
-        $state = [
-            Migration::class => [],
-            Command::class => [],
-        ];
-
-        foreach ($classes as $class) {
-            if (
-                $class->isSubclassOf(Command::class)
-                && $class->isInstantiable()
-                && !str_starts_with($class->name, "Symfony\\Component\\Console\\")
-            ) {
-                $state[Command::class][] = $class->name;
-            }
-            
-            if (
-                $class->implementsInterface(Migration::class)
-                && $class->isInstantiable()
-            ) {
-                $state[Migration::class][] = $class->name;
-            }
+        if (
+            $class->isSubclassOf(Command::class)
+            && $class->isInstantiable()
+            && !str_starts_with($class->name, "Symfony\\Component\\Console\\")
+        ) {
+            $this->state[Command::class][] = $class->name;
         }
 
-        return json_encode($state, JSON_PRETTY_PRINT);
+        if (
+            $class->implementsInterface(Migration::class)
+            && $class->isInstantiable()
+        ) {
+            $this->state[Migration::class][] = $class->name;
+        }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getEncodedModule(): string
+    {
+        return json_encode($this->state, JSON_PRETTY_PRINT);
     }
 }

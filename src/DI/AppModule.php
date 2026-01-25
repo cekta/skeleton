@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace App\DI;
 
-use Cekta\DI\LazyClosure;
+use Cekta\DI\Lazy;
 use Cekta\DI\Module;
-use Psr\Container\ContainerInterface;
+use ReflectionClass;
 
 readonly class AppModule implements Module
 {
@@ -25,9 +25,7 @@ readonly class AppModule implements Module
     public function onCreate(string $encoded_module): array
     {
         return [
-            \Psr\Container\ContainerInterface::class => new LazyClosure(function (ContainerInterface $container) {
-                return $container;
-            }),
+            \Psr\Container\ContainerInterface::class => new Lazy\Container,
             \PDO::class . '$dsn' => $this->env['DB_DSN'] ?? 'sqlite:runtime/db.sqlite',
             \PDO::class . '$username' => $this->env['DB_USERNAME'] ?? null,
             \PDO::class . '$password' => $this->env['DB_PASSWORD'] ?? null,
@@ -45,9 +43,15 @@ readonly class AppModule implements Module
     /**
      * @inheritDoc
      */
-    public function onDiscover(array $classes): string
+    public function discover(ReflectionClass $class): void
     {
-        $state = [];
-        return json_encode($state, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getEncodedModule(): string
+    {
+        return json_encode([], JSON_PRETTY_PRINT);
     }
 }
