@@ -13,6 +13,8 @@ class Project extends \Cekta\DI\Project
         parent::__construct(
             [
                 new AppModule($this->env),
+                new HTTPModule(),
+                new CLIModule(),
             ],
             __DIR__ . '/../../runtime/AppContainer.php',
             'App\\Runtime\\AppContainer',
