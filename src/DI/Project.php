@@ -1,4 +1,5 @@
 <?php
+/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 declare(strict_types=1);
 
@@ -15,8 +16,8 @@ class Project extends \Cekta\DI\Project
         parent::__construct(
             [
                 new AppModule($this->env),
-                new HTTPModule(),
-                new CLIModule(
+                new \Cekta\Framework\HTTP\Module(),
+                new \Cekta\Framework\CLI\Module(
                     command_map: [
                         'migrate' => Migrate::class,
                         'migration:rollback' => Rollback::class,

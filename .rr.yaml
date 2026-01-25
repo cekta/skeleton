@@ -2,7 +2,7 @@ version: "3"
 
 rpc:
   listen: ${RR_RPC_LISTEN:-tcp://127.0.0.1:6001}
-  
+
 status:
   address: ${RR_STATUS_ADDRESS:-127.0.0.1:2114}
 
@@ -15,6 +15,9 @@ http:
   address: ${RR_HTTP_ADDRESS:-0.0.0.0:8080}
   pool:
     debug: ${RR_POOL_DEBUG:-true}
+  middleware: [ "static" ]
+  static:
+    dir: "./public"
 
 logs:
   mode: ${RR_LOGS_MODE:-development}

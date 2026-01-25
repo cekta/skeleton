@@ -10,9 +10,12 @@ use Cekta\Migrator\MigrationLocator;
 use Cekta\Migrator\Storage;
 use ReflectionClass;
 
+/**
+ * this module will be moved to cekta/migrator (tmp solution)
+ */
 class CektaMigratorModule implements Module
 {
-    private array $state;
+    private array $state = [];
     
     public function __construct(
         private readonly string $storage = Storage\DB::class
@@ -40,7 +43,7 @@ class CektaMigratorModule implements Module
             'entries' => [
                 ...($state[Migration::class] ?? []),
             ],
-            'alies' => [
+            'alias' => [
                 Storage::class => $this->storage,
             ],
         ];

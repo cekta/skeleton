@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea8fdf01d59a8a7db4a144a5e7286314",
+    "content-hash": "528f243ce20ef4a771dbfbbf451751ee",
     "packages": [
         {
             "name": "cekta/di",
@@ -71,16 +71,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "237b744e4f55af42b8dc9509173c308926437ae8"
+                "reference": "f8995c959dad61a7b4c96f0c512108df4ab5aa65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/237b744e4f55af42b8dc9509173c308926437ae8",
-                "reference": "237b744e4f55af42b8dc9509173c308926437ae8",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/f8995c959dad61a7b4c96f0c512108df4ab5aa65",
+                "reference": "f8995c959dad61a7b4c96f0c512108df4ab5aa65",
                 "shasum": ""
             },
             "require": {
-                "cekta/di": "@stable",
+                "cekta/di": "dev-master",
                 "cekta/routing-fastroute": "@dev",
                 "nyholm/psr7": "@stable",
                 "psr/http-server-handler": "@stable",
@@ -110,7 +110,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-01-24T23:54:19+00:00"
+            "time": "2026-01-25T18:41:48+00:00"
         },
         {
             "name": "cekta/migrator",
@@ -209,12 +209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/routing-fastroute.git",
-                "reference": "e85e43bf3e8b7389b87f9deff6a42608e2271bb8"
+                "reference": "a199913193fb79e49daf16a281ccef579e2cca0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/routing-fastroute/zipball/e85e43bf3e8b7389b87f9deff6a42608e2271bb8",
-                "reference": "e85e43bf3e8b7389b87f9deff6a42608e2271bb8",
+                "url": "https://api.github.com/repos/cekta/routing-fastroute/zipball/a199913193fb79e49daf16a281ccef579e2cca0e",
+                "reference": "a199913193fb79e49daf16a281ccef579e2cca0e",
                 "shasum": ""
             },
             "require": {
@@ -248,7 +248,7 @@
                 "issues": "https://github.com/cekta/routing-fastroute/issues",
                 "source": "https://github.com/cekta/routing-fastroute/tree/master"
             },
-            "time": "2025-11-21T22:41:17+00:00"
+            "time": "2026-01-25T16:45:19+00:00"
         },
         {
             "name": "google/protobuf",
@@ -1948,14 +1948,14 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cekta/di": 20,
         "cekta/framework": 20,
         "cekta/migrator": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
