@@ -15,7 +15,7 @@ class Project extends \Cekta\DI\Project
     {
         parent::__construct(
             [
-                new AppModule($this->env),
+                new Module($this->env),
                 new \Cekta\Framework\HTTP\Module(),
                 new \Cekta\Framework\CLI\Module(
                     command_map: [
@@ -23,7 +23,7 @@ class Project extends \Cekta\DI\Project
                         'migration:rollback' => Rollback::class,
                     ],
                 ),
-                new CektaMigratorModule(),
+                new \Cekta\Migrator\Module(),
             ],
             __DIR__ . '/../../runtime/AppContainer.php',
             'App\\Runtime\\AppContainer',

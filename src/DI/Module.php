@@ -9,10 +9,9 @@ declare(strict_types=1);
 namespace App\DI;
 
 use Cekta\DI\Lazy;
-use Cekta\DI\Module;
 use ReflectionClass;
 
-readonly class AppModule implements Module
+readonly class Module implements \Cekta\DI\Module
 {
     public function __construct(
         private array $env = []
