@@ -1,7 +1,7 @@
 FROM php:8.4-cli-alpine AS base
 WORKDIR /app
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-COPY --from=ghcr.io/roadrunner-server/roadrunner:2025.1.2 /usr/bin/rr /usr/local/bin/rr
+COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/bin/rr
 RUN install-php-extensions sockets pdo_sqlite
 
 FROM base AS dev
@@ -22,7 +22,7 @@ COPY composer.json composer.lock ./
 RUN composer install --no-scripts --no-interaction
 COPY ./ ./
 RUN composer build \
-    && composer before-build-check \
+    && composer before-image \
     && composer install -a --no-dev # remove dev from build \
     && CEKTA_MODE=build ./app.php # finish compile
 

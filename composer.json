@@ -15,11 +15,13 @@
   },
   "scripts": {
     "build": [
+      "@putenv CEKTA_MODE=build",
       "@composer dumpautoload",
-      "CEKTA_MODE=build php app.php",
+      "@php app.php",
       "echo Generated optimized Container and discover files"
     ],
-    "before-build-check": [
+    "before-image": [
+      "@composer build",
       "echo check code style, or static analyze, or run unit tests, maybe run this target pre merge, runed on build prod"
     ]
   },
