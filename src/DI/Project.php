@@ -1,5 +1,4 @@
 <?php
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 declare(strict_types=1);
 
@@ -11,6 +10,9 @@ use Cekta\Migrator\Command\Rollback;
 
 class Project extends \Cekta\DI\Project
 {
+    /**
+     * @param array<string, string> $env
+     */
     public function __construct(private readonly array $env = [])
     {
         parent::__construct(

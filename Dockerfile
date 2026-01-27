@@ -21,10 +21,9 @@ FROM dev AS builder
 COPY composer.json composer.lock ./
 RUN composer install --no-scripts --no-interaction
 COPY ./ ./
-RUN composer build \
-    && composer before-image \
+RUN composer test \
     && composer install -a --no-dev # remove dev from build \
-    && CEKTA_MODE=build ./app.php # finish compile
+    && composer build
 
 FROM base AS prod
 ARG RR_SERVER_COMMAND_ARG="php -d opcache.enable_cli=1 app.php"

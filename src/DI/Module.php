@@ -1,20 +1,21 @@
 <?php
-/**
- * @noinspection PhpUnnecessaryFullyQualifiedNameInspection
- * @noinspection PhpFullyQualifiedNameUsageInspection
- */
 
 declare(strict_types=1);
 
 namespace App\DI;
 
 use Cekta\DI\Lazy;
+use PDO;
+use Psr\Container\ContainerInterface;
 use ReflectionClass;
 
 readonly class Module implements \Cekta\DI\Module
 {
+    /**
+     * @param array<string, mixed> $config
+     */
     public function __construct(
-        private array $env = []
+        private array $config = []
     ) {
     }
 
@@ -24,10 +25,10 @@ readonly class Module implements \Cekta\DI\Module
     public function onCreate(string $encoded_module): array
     {
         return [
-            \Psr\Container\ContainerInterface::class => new Lazy\Container,
-            \PDO::class . '$dsn' => $this->env['DB_DSN'] ?? 'sqlite:runtime/db.sqlite',
-            \PDO::class . '$username' => $this->env['DB_USERNAME'] ?? null,
-            \PDO::class . '$password' => $this->env['DB_PASSWORD'] ?? null,
+            ContainerInterface::class => new Lazy\Container(),
+            PDO::class . '$dsn' => $this->config['DB_DSN'] ?? 'sqlite:runtime/db.sqlite',
+            PDO::class . '$username' => $this->config['DB_USERNAME'] ?? null,
+            PDO::class . '$password' => $this->config['DB_PASSWORD'] ?? null,
         ];
     }
 
@@ -51,6 +52,6 @@ readonly class Module implements \Cekta\DI\Module
      */
     public function getEncodedModule(): string
     {
-        return json_encode([], JSON_PRETTY_PRINT);
+        return json_encode([], JSON_PRETTY_PRINT) ?: '';
     }
 }

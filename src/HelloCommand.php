@@ -20,5 +20,4 @@ class HelloCommand extends Command
         $output->writeln('hello world');
         return Command::SUCCESS;
     }
-
 }

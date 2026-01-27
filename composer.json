@@ -7,6 +7,10 @@
     "ext-pdo": "*",
     "ext-pdo_sqlite": "*"
   },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^4.0",
+    "phpstan/phpstan": "^2.1"
+  },
   "autoload": {
     "psr-4": {
       "App\\": "src/",
@@ -20,10 +24,14 @@
       "@php app.php",
       "echo Generated optimized Container and discover files"
     ],
-    "before-image": [
-      "@composer build",
-      "echo check code style, or static analyze, or run unit tests, maybe run this target pre merge, runed on build prod"
-    ]
+    "test": [
+      "@php -i",
+      "@build",
+      "@phpcs",
+      "@phpstan"
+    ],
+    "phpcs": "./vendor/bin/phpcs",
+    "phpstan": "./vendor/bin/phpstan analyse --memory-limit=-1"
   },
   "config": {
     "optimize-autoloader": true

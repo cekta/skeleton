@@ -21,5 +21,5 @@ if (!array_key_exists($mode, $dispatchers)) {
     throw new RuntimeException("$mode run_mode invalid");
 }
 
-$project = new Project($_ENV);
+$project = new Project(getenv() + $_ENV);
 $dispatchers[$mode]->dispatch($project);
