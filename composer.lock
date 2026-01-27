@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0b33ddb01ba4c3a192db05daeb61d69",
+    "content-hash": "176b2798a52549122ab4aa9bb66a071c",
     "packages": [
         {
             "name": "cekta/di",
@@ -149,55 +149,6 @@
                 "source": "https://github.com/cekta/framework/tree/master"
             },
             "time": "2026-01-26T22:02:32+00:00"
-        },
-        {
-            "name": "cekta/migrator",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cekta/migrator.git",
-                "reference": "721498a79e59ee3ab210c6ef024c1e0e34d94b0c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cekta/migrator/zipball/721498a79e59ee3ab210c6ef024c1e0e34d94b0c",
-                "reference": "721498a79e59ee3ab210c6ef024c1e0e34d94b0c",
-                "shasum": ""
-            },
-            "require": {
-                "cekta/di-module": "@stable",
-                "ext-pdo": "*",
-                "php": ">=8.1",
-                "psr/container": "@stable",
-                "symfony/console": "@stable"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "@stable",
-                "phpunit/phpunit": "@stable",
-                "squizlabs/php_codesniffer": "@stable"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cekta\\Migrator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "description": "migration tool",
-            "keywords": [
-                "migration",
-                "migrations",
-                "migrator"
-            ],
-            "support": {
-                "issues": "https://github.com/cekta/migrator/issues",
-                "source": "https://github.com/cekta/migrator/tree/master"
-            },
-            "time": "2026-01-26T22:47:42+00:00"
         },
         {
             "name": "cekta/routing",
@@ -2050,8 +2001,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cekta/framework": 20,
-        "cekta/migrator": 20
+        "cekta/framework": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -6,11 +6,11 @@ dev:
 build:
 	docker compose run --rm -it app composer build
 
-migrate:
-	docker compose run --rm -it app ./app.php migrate
-
 shell:
 	docker compose run --rm -it app sh
+
+test:
+	docker compose run --rm -it app composer test
 
 refresh:
 	docker compose down

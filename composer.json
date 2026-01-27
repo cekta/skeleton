@@ -2,10 +2,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "cekta/framework": "@dev",
-    "cekta/migrator": "dev-master",
-    "ext-pdo": "*",
-    "ext-pdo_sqlite": "*"
+    "cekta/framework": "@dev"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^4.0",

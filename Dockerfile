@@ -2,7 +2,8 @@ FROM php:8.4-cli-alpine AS base
 WORKDIR /app
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/bin/rr
-RUN install-php-extensions sockets pdo_sqlite
+RUN install-php-extensions \
+      sockets # required for rr
 
 FROM base AS dev
 RUN install-php-extensions @composer \

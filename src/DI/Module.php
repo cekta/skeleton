@@ -12,23 +12,12 @@ use ReflectionClass;
 readonly class Module implements \Cekta\DI\Module
 {
     /**
-     * @param array<string, mixed> $config
-     */
-    public function __construct(
-        private array $config = []
-    ) {
-    }
-
-    /**
      * @inheritDoc
      */
     public function onCreate(string $encoded_module): array
     {
         return [
-            ContainerInterface::class => new Lazy\Container(),
-            PDO::class . '$dsn' => $this->config['DB_DSN'] ?? 'sqlite:runtime/db.sqlite',
-            PDO::class . '$username' => $this->config['DB_USERNAME'] ?? null,
-            PDO::class . '$password' => $this->config['DB_PASSWORD'] ?? null,
+            ContainerInterface::class => new Lazy\Container()
         ];
     }
 
