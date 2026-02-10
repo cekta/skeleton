@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace App\DI;
 
 use Cekta\DI\Lazy;
-use PDO;
 use Psr\Container\ContainerInterface;
 use ReflectionClass;
 
-readonly class Module implements \Cekta\DI\Module
+readonly class Module implements \Cekta\Framework\Contract\Module
 {
     /**
      * @inheritDoc

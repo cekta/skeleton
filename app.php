@@ -8,7 +8,8 @@ use Cekta\Framework\Dispatcher;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$mode = $_ENV['CEKTA_MODE'] ?? 'cli';
+$env = getenv() + $_ENV;
+$mode = $env['CEKTA_MODE'] ?? 'cli';
 
 /** @var array<string, Dispatcher> $dispatchers */
 $dispatchers = [
@@ -18,8 +19,8 @@ $dispatchers = [
 ];
 
 if (!array_key_exists($mode, $dispatchers)) {
-    throw new RuntimeException("$mode run_mode invalid");
+    throw new RuntimeException("CEKTA_MODE=$mode invalid");
 }
 
-$project = new Project(getenv() + $_ENV);
+$project = new Project($env);
 $dispatchers[$mode]->dispatch($project);

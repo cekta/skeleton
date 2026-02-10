@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "176b2798a52549122ab4aa9bb66a071c",
+    "content-hash": "933416b3564e62f0dc5825a4c8fe531f",
     "packages": [
         {
             "name": "cekta/di",
@@ -109,22 +109,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "7a3c6fcd1758d1de7f2b78b1f340213085ba58d7"
+                "reference": "b29c1ab4746fec47ed991d18f7c862d92f9eb224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/7a3c6fcd1758d1de7f2b78b1f340213085ba58d7",
-                "reference": "7a3c6fcd1758d1de7f2b78b1f340213085ba58d7",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/b29c1ab4746fec47ed991d18f7c862d92f9eb224",
+                "reference": "b29c1ab4746fec47ed991d18f7c862d92f9eb224",
                 "shasum": ""
             },
             "require": {
                 "cekta/di": "dev-master",
+                "cekta/framework-contract": "dev-master",
                 "cekta/routing-fastroute": "@dev",
+                "ext-sockets": "*",
                 "nyholm/psr7": "@stable",
+                "php": ">=8.2",
                 "psr/http-server-handler": "@stable",
                 "psr/http-server-middleware": "@stable",
                 "spiral/roadrunner-http": "@stable",
                 "symfony/console": "@stable"
+            },
+            "require-dev": {
+                "infection/infection": "@stable",
+                "phpstan/phpstan": "@stable",
+                "phpunit/phpunit": "@stable",
+                "squizlabs/php_codesniffer": "@stable"
             },
             "default-branch": true,
             "type": "library",
@@ -148,7 +157,45 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-01-26T22:02:32+00:00"
+            "time": "2026-02-10T16:52:53+00:00"
+        },
+        {
+            "name": "cekta/framework-contract",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cekta/framework-contract.git",
+                "reference": "cbce866351ff6eefc20fd7233ac0905d9138a6be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cekta/framework-contract/zipball/cbce866351ff6eefc20fd7233ac0905d9138a6be",
+                "reference": "cbce866351ff6eefc20fd7233ac0905d9138a6be",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekta\\Framework\\Contract\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Kuvshinov",
+                    "email": "smpl@itmywork.com"
+                }
+            ],
+            "description": "Contracts to external usage",
+            "support": {
+                "issues": "https://github.com/cekta/framework-contract/issues",
+                "source": "https://github.com/cekta/framework-contract/tree/master"
+            },
+            "time": "2026-01-30T23:38:25+00:00"
         },
         {
             "name": "cekta/routing",
@@ -242,16 +289,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v4.33.4",
+            "version": "v4.33.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "22d28025cda0d223a2e48c2e16c5284ecc9f5402"
+                "reference": "ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/22d28025cda0d223a2e48c2e16c5284ecc9f5402",
-                "reference": "22d28025cda0d223a2e48c2e16c5284ecc9f5402",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d",
+                "reference": "ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d",
                 "shasum": ""
             },
             "require": {
@@ -280,9 +327,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.33.4"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.33.5"
             },
-            "time": "2026-01-12T17:58:43+00:00"
+            "time": "2026-01-29T20:49:00+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -1867,11 +1914,11 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.37",
+            "version": "2.1.38",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/28cd424c5ea984128c95cfa7ea658808e8954e49",
-                "reference": "28cd424c5ea984128c95cfa7ea658808e8954e49",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dfaf1f530e1663aa167bc3e52197adb221582629",
+                "reference": "dfaf1f530e1663aa167bc3e52197adb221582629",
                 "shasum": ""
             },
             "require": {
@@ -1916,7 +1963,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-24T08:21:55+00:00"
+            "time": "2026-01-30T17:12:46+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2005,10 +2052,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {
-        "ext-pdo": "*",
-        "ext-pdo_sqlite": "*"
-    },
+    "platform": {},
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
 }

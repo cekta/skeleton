@@ -6,10 +6,12 @@ namespace App\DI;
 
 use Cekta\DI\ClassLoader\Composer;
 
-class Project extends \Cekta\DI\Project
+class Project extends \Cekta\Framework\Project
 {
     /**
      * @param array<string, string> $env
+     * @phpstan-ignore property.onlyWritten
+     * @noinspection PhpPropertyOnlyWrittenInspection
      */
     public function __construct(private readonly array $env = [])
     {
