@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "933416b3564e62f0dc5825a4c8fe531f",
+    "content-hash": "af17f96d821b37626a03e98cf689f477",
     "packages": [
         {
             "name": "cekta/di",
@@ -12,16 +12,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/di.git",
-                "reference": "2335fa25f858c393835856486dc4db249413f702"
+                "reference": "296982fd7d3e73a059d7880d6fbff2202c746704"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/di/zipball/2335fa25f858c393835856486dc4db249413f702",
-                "reference": "2335fa25f858c393835856486dc4db249413f702",
+                "url": "https://api.github.com/repos/cekta/di/zipball/296982fd7d3e73a059d7880d6fbff2202c746704",
+                "reference": "296982fd7d3e73a059d7880d6fbff2202c746704",
                 "shasum": ""
             },
             "require": {
-                "cekta/di-module": "dev-master",
                 "php": ">=8.2",
                 "psr/container": ">=2.0"
             },
@@ -63,45 +62,7 @@
                 "issues": "https://github.com/cekta/di/issues",
                 "source": "https://github.com/cekta/di/tree/master"
             },
-            "time": "2026-01-26T22:40:03+00:00"
-        },
-        {
-            "name": "cekta/di-module",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cekta/di-module.git",
-                "reference": "bd0c7bda3464815c7756ee289e630747c032e5eb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cekta/di-module/zipball/bd0c7bda3464815c7756ee289e630747c032e5eb",
-                "reference": "bd0c7bda3464815c7756ee289e630747c032e5eb",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cekta\\DI\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Evgeniy Kuvshinov",
-                    "email": "smpl@itmywork.com"
-                }
-            ],
-            "description": "cekta/di module interface to external usage",
-            "support": {
-                "issues": "https://github.com/cekta/di-module/issues",
-                "source": "https://github.com/cekta/di-module/tree/master"
-            },
-            "time": "2026-01-26T22:27:03+00:00"
+            "time": "2026-02-10T21:07:47+00:00"
         },
         {
             "name": "cekta/framework",

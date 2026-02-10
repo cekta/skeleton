@@ -1,4 +1,6 @@
 {
+  "name": "cekta/skeleton",
+  "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
