@@ -70,12 +70,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "7516e3c599d99b297e2249a5fec2d904188cea9b"
+                "reference": "3fdad916f3a6a901559939451e2dd087a587560c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/7516e3c599d99b297e2249a5fec2d904188cea9b",
-                "reference": "7516e3c599d99b297e2249a5fec2d904188cea9b",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/3fdad916f3a6a901559939451e2dd087a587560c",
+                "reference": "3fdad916f3a6a901559939451e2dd087a587560c",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-02-19T14:37:38+00:00"
+            "time": "2026-02-19T19:48:53+00:00"
         },
         {
             "name": "cekta/framework-contract",
@@ -903,16 +903,16 @@
         },
         {
             "name": "spiral/roadrunner",
-            "version": "v2025.1.7",
+            "version": "v2025.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "f0e9beb540b12e85e36ac5ff83f728eed0436164"
+                "reference": "e3b05713e8d65ad4d5104d839890cc4892d63b2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/f0e9beb540b12e85e36ac5ff83f728eed0436164",
-                "reference": "f0e9beb540b12e85e36ac5ff83f728eed0436164",
+                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/e3b05713e8d65ad4d5104d839890cc4892d63b2d",
+                "reference": "e3b05713e8d65ad4d5104d839890cc4892d63b2d",
                 "shasum": ""
             },
             "type": "metapackage",
@@ -940,7 +940,7 @@
                 "chat": "https://discord.gg/V6EK4he",
                 "docs": "https://docs.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.7"
+                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.8"
             },
             "funding": [
                 {
@@ -948,7 +948,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-17T07:53:07+00:00"
+            "time": "2026-02-19T14:32:44+00:00"
         },
         {
             "name": "spiral/roadrunner-http",
