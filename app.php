@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-use App\DI\Project;
+use App\Project;
 use Cekta\Framework\Dispatcher;
 
 require_once __DIR__ . '/vendor/autoload.php';

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DI;
+namespace App;
 
 use Cekta\DI\ClassLoader\Composer;
 
@@ -22,11 +22,11 @@ class Project extends \Cekta\Framework\Project
                 new \Cekta\Framework\HTTP\Module(),
                 new \Cekta\Framework\CLI\Module(),
             ],
-            __DIR__ . '/../../runtime/AppContainer.php',
+            __DIR__ . '/../runtime/AppContainer.php',
             'App\\Runtime\\AppContainer',
-            __DIR__ . '/../../runtime/discover.php',
+            __DIR__ . '/../runtime/discover.json',
             new Composer(
-                __DIR__ . '/../../vendor/composer/autoload_classmap.php'
+                __DIR__ . '/../vendor/composer/autoload_classmap.php'
             )
         );
     }

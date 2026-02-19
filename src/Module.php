@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DI;
+namespace App;
 
 use Cekta\DI\Lazy;
 use Psr\Container\ContainerInterface;
@@ -13,7 +13,7 @@ readonly class Module implements \Cekta\Framework\Contract\Module
     /**
      * @inheritDoc
      */
-    public function onCreate(string $encoded_module): array
+    public function onCreateParameters(mixed $cachedData): array
     {
         return [
             ContainerInterface::class => new Lazy\Container()
@@ -23,7 +23,7 @@ readonly class Module implements \Cekta\Framework\Contract\Module
     /**
      * @inheritDoc
      */
-    public function onBuild(string $encoded_module): array
+    public function onBuildDefinitions(mixed $cachedData): array
     {
         return [];
     }
@@ -38,8 +38,8 @@ readonly class Module implements \Cekta\Framework\Contract\Module
     /**
      * @inheritDoc
      */
-    public function getEncodedModule(): string
+    public function getCacheableData(): mixed
     {
-        return json_encode([], JSON_PRETTY_PRINT) ?: '';
+        return [];
     }
 }

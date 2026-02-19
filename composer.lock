@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/di.git",
-                "reference": "296982fd7d3e73a059d7880d6fbff2202c746704"
+                "reference": "ea14638a4a8ef26c5091fe30b7871aa72195feb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/di/zipball/296982fd7d3e73a059d7880d6fbff2202c746704",
-                "reference": "296982fd7d3e73a059d7880d6fbff2202c746704",
+                "url": "https://api.github.com/repos/cekta/di/zipball/ea14638a4a8ef26c5091fe30b7871aa72195feb9",
+                "reference": "ea14638a4a8ef26c5091fe30b7871aa72195feb9",
                 "shasum": ""
             },
             "require": {
@@ -62,7 +62,7 @@
                 "issues": "https://github.com/cekta/di/issues",
                 "source": "https://github.com/cekta/di/tree/master"
             },
-            "time": "2026-02-10T21:07:47+00:00"
+            "time": "2026-02-15T11:07:50+00:00"
         },
         {
             "name": "cekta/framework",
@@ -70,12 +70,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "b29c1ab4746fec47ed991d18f7c862d92f9eb224"
+                "reference": "7516e3c599d99b297e2249a5fec2d904188cea9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/b29c1ab4746fec47ed991d18f7c862d92f9eb224",
-                "reference": "b29c1ab4746fec47ed991d18f7c862d92f9eb224",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/7516e3c599d99b297e2249a5fec2d904188cea9b",
+                "reference": "7516e3c599d99b297e2249a5fec2d904188cea9b",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-02-10T16:52:53+00:00"
+            "time": "2026-02-19T14:37:38+00:00"
         },
         {
             "name": "cekta/framework-contract",
@@ -126,13 +126,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework-contract.git",
-                "reference": "cbce866351ff6eefc20fd7233ac0905d9138a6be"
+                "reference": "64eb339895aa6ed5e3c581099d106108c1ed3338"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework-contract/zipball/cbce866351ff6eefc20fd7233ac0905d9138a6be",
-                "reference": "cbce866351ff6eefc20fd7233ac0905d9138a6be",
+                "url": "https://api.github.com/repos/cekta/framework-contract/zipball/64eb339895aa6ed5e3c581099d106108c1ed3338",
+                "reference": "64eb339895aa6ed5e3c581099d106108c1ed3338",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
             },
             "default-branch": true,
             "type": "library",
@@ -156,7 +159,7 @@
                 "issues": "https://github.com/cekta/framework-contract/issues",
                 "source": "https://github.com/cekta/framework-contract/tree/master"
             },
-            "time": "2026-01-30T23:38:25+00:00"
+            "time": "2026-02-19T13:54:11+00:00"
         },
         {
             "name": "cekta/routing",
@@ -900,16 +903,16 @@
         },
         {
             "name": "spiral/roadrunner",
-            "version": "v2025.1.6",
+            "version": "v2025.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "207b2b4ba75f2529ecccf801b3d8dd7038f22732"
+                "reference": "f0e9beb540b12e85e36ac5ff83f728eed0436164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/207b2b4ba75f2529ecccf801b3d8dd7038f22732",
-                "reference": "207b2b4ba75f2529ecccf801b3d8dd7038f22732",
+                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/f0e9beb540b12e85e36ac5ff83f728eed0436164",
+                "reference": "f0e9beb540b12e85e36ac5ff83f728eed0436164",
                 "shasum": ""
             },
             "type": "metapackage",
@@ -937,7 +940,7 @@
                 "chat": "https://discord.gg/V6EK4he",
                 "docs": "https://docs.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.6"
+                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.7"
             },
             "funding": [
                 {
@@ -945,20 +948,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-11T14:45:22+00:00"
+            "time": "2026-02-17T07:53:07+00:00"
         },
         {
             "name": "spiral/roadrunner-http",
-            "version": "v3.6.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-php/http.git",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88"
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
+                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/8e241065a26cc500d021a29ce28be0d5f4b80a8f",
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f",
                 "shasum": ""
             },
             "require": {
@@ -1027,7 +1030,7 @@
                 "docs": "https://docs.roadrunner.dev",
                 "forum": "https://forum.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-php/http/tree/v3.6.0"
+                "source": "https://github.com/roadrunner-php/http/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -1035,7 +1038,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-31T12:42:23+00:00"
+            "time": "2026-02-18T16:00:02+00:00"
         },
         {
             "name": "spiral/roadrunner-worker",
@@ -1875,11 +1878,11 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.38",
+            "version": "2.1.39",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dfaf1f530e1663aa167bc3e52197adb221582629",
-                "reference": "dfaf1f530e1663aa167bc3e52197adb221582629",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/c6f73a2af4cbcd99c931d0fb8f08548cc0fa8224",
+                "reference": "c6f73a2af4cbcd99c931d0fb8f08548cc0fa8224",
                 "shasum": ""
             },
             "require": {
@@ -1924,7 +1927,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-30T17:12:46+00:00"
+            "time": "2026-02-11T14:48:56+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
