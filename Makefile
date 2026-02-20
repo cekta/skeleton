@@ -13,8 +13,12 @@ test:
 	docker compose run --rm -it app composer test
 
 refresh:
-	docker compose down
+	docker compose down --remove-orphans
 	docker compose build
+
+restart:
+	docker compose stop
+	@make dev
 
 image:
 	docker build --target prod -t cekta-app .
