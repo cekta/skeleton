@@ -70,12 +70,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "3fdad916f3a6a901559939451e2dd087a587560c"
+                "reference": "9e4b700d607be086fe4a01bcf3151c4c5b6b4cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/3fdad916f3a6a901559939451e2dd087a587560c",
-                "reference": "3fdad916f3a6a901559939451e2dd087a587560c",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/9e4b700d607be086fe4a01bcf3151c4c5b6b4cff",
+                "reference": "9e4b700d607be086fe4a01bcf3151c4c5b6b4cff",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-02-19T19:48:53+00:00"
+            "time": "2026-02-20T18:42:13+00:00"
         },
         {
             "name": "cekta/framework-contract",
