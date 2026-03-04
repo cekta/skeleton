@@ -1,13 +1,3 @@
 /vendor
-/runtime
-/db.sqlite
-
-# used on develop for testing without commit
-# composer.json
-#"repositories": [
-#    {
-#      "type": "path",
-#      "url": "./local/cekta/framework"
-#    }
-#  ]
-/local
+/runtime/*
+!/runtime/readme.md
