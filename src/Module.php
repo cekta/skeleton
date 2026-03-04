@@ -6,6 +6,8 @@ namespace App;
 
 use Cekta\DI\Lazy;
 use Psr\Container\ContainerInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use ReflectionClass;
 
 readonly class Module implements \Cekta\Framework\Contract\Module
@@ -25,7 +27,11 @@ readonly class Module implements \Cekta\Framework\Contract\Module
      */
     public function onBuildDefinitions(mixed $cachedData): array
     {
-        return [];
+        return [
+            'alias' => [
+                LoggerInterface::class => NullLogger::class
+            ],
+        ];
     }
 
     /**
