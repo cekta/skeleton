@@ -3,10 +3,13 @@ WORKDIR /app
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/bin/rr
 RUN install-php-extensions \
+#      pdo \
+#      pdo_pgsql \
       sockets # required for rr
 
 FROM base AS dev
-RUN install-php-extensions @composer \
+RUN install-php-extensions \
+        @composer \
     && apk add --no-cache make \
     && cat <<'EOF' > /usr/bin/app-dev \
     && chmod +x /usr/bin/app-dev

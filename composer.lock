@@ -70,17 +70,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "3808d6ae239d46539c93323430ad9e10d048bff7"
+                "reference": "7e5987532e8695a6fa10b88d9ef876e34d5b5957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/3808d6ae239d46539c93323430ad9e10d048bff7",
-                "reference": "3808d6ae239d46539c93323430ad9e10d048bff7",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/7e5987532e8695a6fa10b88d9ef876e34d5b5957",
+                "reference": "7e5987532e8695a6fa10b88d9ef876e34d5b5957",
                 "shasum": ""
             },
             "require": {
                 "cekta/di": "dev-master",
-                "cekta/framework-contract": "dev-master",
+                "cekta/module": "dev-master",
                 "cekta/routing-fastroute": "@dev",
                 "ext-sockets": "*",
                 "nyholm/psr7": "@stable",
@@ -118,20 +118,20 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-03-04T17:09:53+00:00"
+            "time": "2026-03-06T20:08:40+00:00"
         },
         {
-            "name": "cekta/framework-contract",
+            "name": "cekta/module",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/cekta/framework-contract.git",
-                "reference": "64eb339895aa6ed5e3c581099d106108c1ed3338"
+                "url": "https://github.com/cekta/module.git",
+                "reference": "399310241f6fe90983d9b9efa83cf0ec6c966f46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework-contract/zipball/64eb339895aa6ed5e3c581099d106108c1ed3338",
-                "reference": "64eb339895aa6ed5e3c581099d106108c1ed3338",
+                "url": "https://api.github.com/repos/cekta/module/zipball/399310241f6fe90983d9b9efa83cf0ec6c966f46",
+                "reference": "399310241f6fe90983d9b9efa83cf0ec6c966f46",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Cekta\\Framework\\Contract\\": "src/"
+                    "Cekta\\Module\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -154,12 +154,12 @@
                     "email": "smpl@itmywork.com"
                 }
             ],
-            "description": "Contracts to external usage",
+            "description": "Module abstraction to framework",
             "support": {
-                "issues": "https://github.com/cekta/framework-contract/issues",
-                "source": "https://github.com/cekta/framework-contract/tree/master"
+                "issues": "https://github.com/cekta/module/issues",
+                "source": "https://github.com/cekta/module/tree/master"
             },
-            "time": "2026-02-19T13:54:11+00:00"
+            "time": "2026-03-06T20:03:16+00:00"
         },
         {
             "name": "cekta/routing",
@@ -1127,16 +1127,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v8.0.6",
+            "version": "v8.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "488285876e807a4777f074041d8bb508623419fa"
+                "reference": "15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/488285876e807a4777f074041d8bb508623419fa",
-                "reference": "488285876e807a4777f074041d8bb508623419fa",
+                "url": "https://api.github.com/repos/symfony/console/zipball/15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a",
+                "reference": "15ed9008a4ebe2d6a78e4937f74e0c13ef2e618a",
                 "shasum": ""
             },
             "require": {
@@ -1193,7 +1193,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v8.0.6"
+                "source": "https://github.com/symfony/console/tree/v8.0.7"
             },
             "funding": [
                 {
@@ -1213,7 +1213,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-25T16:59:43+00:00"
+            "time": "2026-03-06T14:06:22+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

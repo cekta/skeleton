@@ -21,7 +21,7 @@ class Application
             $env['CEKTA_MODE'] ?? 'cli',
             new \Cekta\Framework\Project(
                 [
-                    new Module(),
+                    new Module($env),
                     new \Cekta\Framework\HTTP\Module(),
                     new \Cekta\Framework\CLI\Module(),
                 ],
