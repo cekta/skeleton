@@ -3,23 +3,18 @@ WORKDIR /app
 COPY --from=ghcr.io/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/bin/rr
 RUN install-php-extensions \
-#      pdo \
-#      pdo_pgsql \
+      pdo \
+      pdo_pgsql \
+      pcntl \
       sockets # required for rr
 
 FROM base AS dev
+COPY docker/dev-entrypoint.sh /entrypoint.sh
 RUN install-php-extensions \
         @composer \
     && apk add --no-cache make \
-    && cat <<'EOF' > /usr/bin/app-dev \
-    && chmod +x /usr/bin/app-dev
-#!/usr/bin/env sh
-
-composer install
-composer build
-exec rr serve
-EOF
-CMD ["/usr/bin/app-dev"]
+    && chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 FROM dev AS builder
 COPY composer.json composer.lock ./
@@ -40,7 +35,5 @@ ENV RR_SERVER_COMMAND=$RR_SERVER_COMMAND_ARG \
     RR_LOGS_ENCODING=$RR_LOGS_ENCODING_ARG \
     RR_LOGS_MODE=$RR_LOGS_MODE_ARG \
     RR_LOGS_LEVEL=$RR_LOGS_LEVEL_ARG
-
 COPY --from=builder /app /app
-
 CMD ["rr", "serve", "-s"]

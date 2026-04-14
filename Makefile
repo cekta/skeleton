@@ -13,7 +13,7 @@ test:
 	docker compose run --rm -it app composer test
 
 refresh:
-	docker compose down --remove-orphans
+	docker compose down --remove-orphans -v
 	docker compose build
 
 restart:

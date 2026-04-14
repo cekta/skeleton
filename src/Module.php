@@ -5,9 +5,9 @@ declare(strict_types=1);
 
 namespace App;
 
+use Cekta\Framework\Logger\JSON;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use ReflectionClass;
 
 readonly class Module implements \Cekta\Module\Module
@@ -27,14 +27,14 @@ readonly class Module implements \Cekta\Module\Module
     {
         return [
             ContainerInterface::class => new \Cekta\DI\Lazy\Container(),
-//            \PDO::class . '$username' => $this->env['DB_USERNAME'] ?? 'postgres',
-//            \PDO::class . '$password' => $this->env['DB_PASSWORD'] ?? 'cekta',
-//            \PDO::class . '$dsn' => new \Cekta\DI\Lazy\Closure(function (ContainerInterface $c) {
-//                $host = $this->env['DB_HOST'] ?? 'db';
-//                $db = $this->env['DB_NAME'] ?? 'postgres';
-//                return "pgsql:host=$host;dbname=$db;";
-//            }),
-//            \PDO::class . '$options' => [],
+            \PDO::class . '$username' => $this->env['DB_USERNAME'] ?? 'postgres',
+            \PDO::class . '$password' => $this->env['DB_PASSWORD'] ?? 'cekta',
+            \PDO::class . '$dsn' => new \Cekta\DI\Lazy\Closure(function (ContainerInterface $c) {
+                $host = $this->env['DB_HOST'] ?? 'db';
+                $db = $this->env['DB_NAME'] ?? 'postgres';
+                return "pgsql:host=$host;dbname=$db;";
+            }),
+            \PDO::class . '$options' => [],
         ];
     }
 
@@ -46,7 +46,7 @@ readonly class Module implements \Cekta\Module\Module
         return [
             'entries' => [],
             'alias' => [
-                LoggerInterface::class => NullLogger::class,
+                LoggerInterface::class => JSON::class,
             ],
             'singletons' => [],
             'factories' => [],

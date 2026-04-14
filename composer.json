@@ -4,7 +4,10 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "cekta/framework": "@dev"
+    "cekta/framework": "@dev",
+    "cekta/migrator": "dev-master",
+    "ext-pdo": "*",
+    "cekta/roadrunner": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^4.0",
@@ -29,7 +32,12 @@
       "@phpcs",
       "@phpstan"
     ],
+    "worker": [
+      "@putenv CEKTA_MODE=worker-beanstalk",
+      "@php app.php"
+    ],
     "phpcs": "./vendor/bin/phpcs",
+    "migrate": "@php app.php ",
     "phpstan": "./vendor/bin/phpstan analyse --memory-limit=-1"
   },
   "config": {
