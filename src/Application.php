@@ -16,7 +16,7 @@ class Application
         $app = new \Cekta\Framework\Application([
             'build' => new \Cekta\Framework\Dispatcher\Build(),
             'rr' => new \Cekta\RoadRunner\Dispatcher\RR(),
-            'cli' => new \Cekta\Framework\Dispatcher\CLI(),
+            'cli' => new \Cekta\CliSymfony\Dispatcher(),
         ]);
         $env = getenv() + $_ENV;
         return $app->handle(
@@ -25,7 +25,7 @@ class Application
                 [
                     new Module($env),
                     new \Cekta\RoadRunner\Module(),
-                    new \Cekta\Framework\CLI\Module([
+                    new \Cekta\CliSymfony\Module([
                         'migrate' => Migrate::class,
                         'rollback' => Rollback::class,
                         'make:migration' => MakeMigration::class,

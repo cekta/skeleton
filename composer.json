@@ -7,7 +7,8 @@
     "cekta/framework": "@dev",
     "cekta/migrator": "dev-master",
     "ext-pdo": "*",
-    "cekta/roadrunner": "dev-master"
+    "cekta/roadrunner": "dev-master",
+    "cekta/cli-symfony": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^4.0",
