@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
-use Cekta\Framework\HTTP\Response\JSONFactory;
-use Cekta\Framework\HTTP\Route;
+use Cekta\RoadRunner\Response\JSONFactory;
+use Cekta\RoadRunner\Route;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
