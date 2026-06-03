@@ -7,4 +7,4 @@ use App\Application;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-exit (Application::main());
+exit(Application::main());

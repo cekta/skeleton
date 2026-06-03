@@ -18,6 +18,9 @@ class Application
             'rr' => new \Cekta\RoadRunner\Dispatcher\RR(),
             'cli' => new \Cekta\CliSymfony\Dispatcher(),
         ]);
+        /**
+         * @var string[] $env
+         */
         $env = getenv() + $_ENV;
         return $app->handle(
             $env['CEKTA_MODE'] ?? 'cli',
@@ -25,11 +28,6 @@ class Application
                 [
                     new Module($env),
                     new \Cekta\RoadRunner\Module(),
-                    new \Cekta\CliSymfony\Module([
-                        'migrate' => Migrate::class,
-                        'rollback' => Rollback::class,
-                        'make:migration' => MakeMigration::class,
-                    ]),
                     new \Cekta\Migrator\Module(),
                 ],
                 __DIR__ . '/../runtime/AppContainer.php',
