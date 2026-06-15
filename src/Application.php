@@ -5,10 +5,6 @@ declare(strict_types=1);
 
 namespace App;
 
-use Cekta\Migrator\Command\MakeMigration;
-use Cekta\Migrator\Command\Migrate;
-use Cekta\Migrator\Command\Rollback;
-
 class Application
 {
     public static function main(): int
@@ -29,6 +25,7 @@ class Application
                     new Module($env),
                     new \Cekta\RoadRunner\Module(),
                     new \Cekta\Migrator\Module(),
+                    new \Cekta\CliSymfony\Module(),
                 ],
                 __DIR__ . '/../runtime/AppContainer.php',
                 'App\\Runtime\\AppContainer',
