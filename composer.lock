@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11673185da5d07f23a7090e8e77e99e0",
+    "content-hash": "d55154f6e26ba003020a9441736dfa1f",
     "packages": [
+        {
+            "name": "brick/math",
+            "version": "0.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brick/math.git",
+                "reference": "82944324d1c1bdb2c2618e89978d4e2ad78d69ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brick/math/zipball/82944324d1c1bdb2c2618e89978d4e2ad78d69ad",
+                "reference": "82944324d1c1bdb2c2618e89978d4e2ad78d69ad",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "2.1.22",
+                "phpunit/phpunit": "^11.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Brick\\Math\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Arbitrary-precision arithmetic library",
+            "keywords": [
+                "Arbitrary-precision",
+                "BigInteger",
+                "BigRational",
+                "arithmetic",
+                "bigdecimal",
+                "bignum",
+                "bignumber",
+                "brick",
+                "decimal",
+                "integer",
+                "math",
+                "mathematics",
+                "rational"
+            ],
+            "support": {
+                "issues": "https://github.com/brick/math/issues",
+                "source": "https://github.com/brick/math/tree/0.18.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/BenMorel",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-06-14T18:21:03+00:00"
+        },
         {
             "name": "cekta/cli-symfony",
             "version": "dev-master",
@@ -119,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "81703c58cf4f6f8a936263fcf1f91923ecc0a3fe"
+                "reference": "3c0758339601c89cb16a6f4a05f31142131c2c91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/81703c58cf4f6f8a936263fcf1f91923ecc0a3fe",
-                "reference": "81703c58cf4f6f8a936263fcf1f91923ecc0a3fe",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/3c0758339601c89cb16a6f4a05f31142131c2c91",
+                "reference": "3c0758339601c89cb16a6f4a05f31142131c2c91",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +222,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-06-15T19:42:59+00:00"
+            "time": "2026-06-21T21:46:13+00:00"
         },
         {
             "name": "cekta/migrator",
@@ -171,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/migrator.git",
-                "reference": "9b38e998fc29c292b52c19ed70d4ac6fa70bd623"
+                "reference": "0af3465440d6e91ec12d4c30bf1974788d0565f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/migrator/zipball/9b38e998fc29c292b52c19ed70d4ac6fa70bd623",
-                "reference": "9b38e998fc29c292b52c19ed70d4ac6fa70bd623",
+                "url": "https://api.github.com/repos/cekta/migrator/zipball/0af3465440d6e91ec12d4c30bf1974788d0565f3",
+                "reference": "0af3465440d6e91ec12d4c30bf1974788d0565f3",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +272,7 @@
                 "issues": "https://github.com/cekta/migrator/issues",
                 "source": "https://github.com/cekta/migrator/tree/master"
             },
-            "time": "2026-03-06T20:19:31+00:00"
+            "time": "2026-06-25T20:27:23+00:00"
         },
         {
             "name": "cekta/module",
@@ -255,6 +314,158 @@
                 "source": "https://github.com/cekta/module/tree/master"
             },
             "time": "2026-03-06T20:03:16+00:00"
+        },
+        {
+            "name": "cekta/queue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cekta/queue.git",
+                "reference": "00aec6eff6dd163381b21d0ac30ee9bcb252bd5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cekta/queue/zipball/00aec6eff6dd163381b21d0ac30ee9bcb252bd5a",
+                "reference": "00aec6eff6dd163381b21d0ac30ee9bcb252bd5a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "@stable",
+                "squizlabs/php_codesniffer": "@stable",
+                "testo/testo": "^0.10.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekta\\Queue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Kuvshinov",
+                    "email": "smpl@itmywork.com"
+                }
+            ],
+            "description": "Queue abstraction",
+            "support": {
+                "issues": "https://github.com/cekta/queue/issues",
+                "source": "https://github.com/cekta/queue/tree/master"
+            },
+            "time": "2026-06-21T19:17:11+00:00"
+        },
+        {
+            "name": "cekta/queue-postgres",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cekta/queue-postgres.git",
+                "reference": "c2a8f3c14b07a89339be3778691618e49aa5ea98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cekta/queue-postgres/zipball/c2a8f3c14b07a89339be3778691618e49aa5ea98",
+                "reference": "c2a8f3c14b07a89339be3778691618e49aa5ea98",
+                "shasum": ""
+            },
+            "require": {
+                "cekta/queue": "dev-master",
+                "ext-pdo": "*",
+                "php": ">=8.3",
+                "psr/clock": "^1.0",
+                "psr/container": "^2.0",
+                "psr/log": "^3.0",
+                "ramsey/uuid": "^4.9"
+            },
+            "require-dev": {
+                "infection/infection": "@stable",
+                "lcobucci/clock": "^3.5",
+                "phpstan/phpstan": "@stable",
+                "squizlabs/php_codesniffer": "@stable",
+                "testo/bridge-infection": "@stable",
+                "testo/testo": "@stable"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekta\\Queue\\Postgres\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Kuvshinov",
+                    "email": "smpl@itmywork.com"
+                }
+            ],
+            "description": "Postgres implementation for cekta/queue",
+            "support": {
+                "issues": "https://github.com/cekta/queue-postgres/issues",
+                "source": "https://github.com/cekta/queue-postgres/tree/master"
+            },
+            "time": "2026-06-21T19:50:41+00:00"
+        },
+        {
+            "name": "cekta/queue-postgres-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cekta/queue-postgres-module.git",
+                "reference": "bd91d6d9100fff57e02698a7c168f333447bbd47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cekta/queue-postgres-module/zipball/bd91d6d9100fff57e02698a7c168f333447bbd47",
+                "reference": "bd91d6d9100fff57e02698a7c168f333447bbd47",
+                "shasum": ""
+            },
+            "require": {
+                "cekta/migrator": "dev-master",
+                "cekta/module": "dev-master",
+                "cekta/queue-postgres": "dev-master",
+                "ext-pdo": "*",
+                "php": ">=8.3"
+            },
+            "require-dev": {
+                "infection/infection": "@stable",
+                "phpstan/phpstan": "@stable",
+                "squizlabs/php_codesniffer": "@stable",
+                "testo/bridge-infection": "@stable",
+                "testo/testo": "@stable"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cekta\\Queue\\Postgres\\Module\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Kuvshinov",
+                    "email": "smpl@itmywork.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/cekta/queue-postgres-module/issues",
+                "source": "https://github.com/cekta/queue-postgres-module/tree/master"
+            },
+            "time": "2026-06-25T19:18:39+00:00"
         },
         {
             "name": "cekta/roadrunner",
@@ -946,6 +1157,160 @@
             "time": "2024-09-11T13:17:53+00:00"
         },
         {
+            "name": "ramsey/collection",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/collection.git",
+                "reference": "344572933ad0181accbf4ba763e85a0306a8c5e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/collection/zipball/344572933ad0181accbf4ba763e85a0306a8c5e2",
+                "reference": "344572933ad0181accbf4ba763e85a0306a8c5e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "captainhook/plugin-composer": "^5.3",
+                "ergebnis/composer-normalize": "^2.45",
+                "fakerphp/faker": "^1.24",
+                "hamcrest/hamcrest-php": "^2.0",
+                "jangregor/phpstan-prophecy": "^2.1",
+                "mockery/mockery": "^1.6",
+                "php-parallel-lint/php-console-highlighter": "^1.0",
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpspec/prophecy-phpunit": "^2.3",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-mockery": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^10.5",
+                "ramsey/coding-standard": "^2.3",
+                "ramsey/conventional-commits": "^1.6",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "library",
+            "extra": {
+                "captainhook": {
+                    "force-install": true
+                },
+                "ramsey/conventional-commits": {
+                    "configFile": "conventional-commits.json"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ramsey\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                }
+            ],
+            "description": "A PHP library for representing and manipulating collections.",
+            "keywords": [
+                "array",
+                "collection",
+                "hash",
+                "map",
+                "queue",
+                "set"
+            ],
+            "support": {
+                "issues": "https://github.com/ramsey/collection/issues",
+                "source": "https://github.com/ramsey/collection/tree/2.1.1"
+            },
+            "time": "2025-03-22T05:38:12+00:00"
+        },
+        {
+            "name": "ramsey/uuid",
+            "version": "4.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "1df15849d00943a67d677dc9cfd80795f038c9f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/1df15849d00943a67d677dc9cfd80795f038c9f8",
+                "reference": "1df15849d00943a67d677dc9cfd80795f038c9f8",
+                "shasum": ""
+            },
+            "require": {
+                "brick/math": ">=0.8.16 <=0.18",
+                "php": "^8.0",
+                "ramsey/collection": "^1.2 || ^2.0"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
+            },
+            "require-dev": {
+                "captainhook/captainhook": "^5.25",
+                "captainhook/plugin-composer": "^5.3",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "ergebnis/composer-normalize": "^2.47",
+                "mockery/mockery": "^1.6",
+                "paragonie/random-lib": "^2",
+                "php-mock/php-mock": "^2.6",
+                "php-mock/php-mock-mockery": "^1.5",
+                "php-parallel-lint/php-parallel-lint": "^1.4.0",
+                "phpbench/phpbench": "^1.2.14",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-mockery": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.6",
+                "slevomat/coding-standard": "^8.18",
+                "squizlabs/php_codesniffer": "^3.13"
+            },
+            "suggest": {
+                "ext-bcmath": "Enables faster math with arbitrary-precision integers using BCMath.",
+                "ext-gmp": "Enables faster math with arbitrary-precision integers using GMP.",
+                "ext-uuid": "Enables the use of PeclUuidTimeGenerator and PeclUuidRandomGenerator.",
+                "paragonie/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
+                "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
+            },
+            "type": "library",
+            "extra": {
+                "captainhook": {
+                    "force-install": true
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP library for generating and working with universally unique identifiers (UUIDs).",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "support": {
+                "issues": "https://github.com/ramsey/uuid/issues",
+                "source": "https://github.com/ramsey/uuid/tree/4.9.3"
+            },
+            "time": "2026-06-18T03:57:49+00:00"
+        },
+        {
             "name": "roadrunner-php/roadrunner-api-dto",
             "version": "v1.14.1",
             "source": {
@@ -1101,16 +1466,16 @@
         },
         {
             "name": "spiral/roadrunner",
-            "version": "v2025.1.14",
+            "version": "v2025.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "3853ad693522e82d53d62950e5f1315402c910f2"
+                "reference": "321b817fab1056e404533ca1ddd200e77d1525fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/3853ad693522e82d53d62950e5f1315402c910f2",
-                "reference": "3853ad693522e82d53d62950e5f1315402c910f2",
+                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/321b817fab1056e404533ca1ddd200e77d1525fd",
+                "reference": "321b817fab1056e404533ca1ddd200e77d1525fd",
                 "shasum": ""
             },
             "type": "metapackage",
@@ -1138,7 +1503,7 @@
                 "chat": "https://discord.gg/V6EK4he",
                 "docs": "https://docs.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.14"
+                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.15"
             },
             "funding": [
                 {
@@ -1146,7 +1511,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-05-15T13:20:01+00:00"
+            "time": "2026-06-17T14:49:38+00:00"
         },
         {
             "name": "spiral/roadrunner-http",
@@ -2236,6 +2601,7 @@
         "cekta/cli-symfony": 20,
         "cekta/framework": 20,
         "cekta/migrator": 20,
+        "cekta/queue-postgres-module": 20,
         "cekta/roadrunner": 20
     },
     "prefer-stable": true,

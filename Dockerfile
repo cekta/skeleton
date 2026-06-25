@@ -5,6 +5,7 @@ COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/b
 RUN install-php-extensions \
       pdo \
       pdo_pgsql \
+      xdebug \
       pcntl \
       sockets # required for rr
 

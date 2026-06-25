@@ -14,7 +14,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 final readonly class Welcome implements RequestHandlerInterface
 {
     public function __construct(
-        private JSONFactory $factory
+        private JSONFactory $factory,
     ) {
     }
 

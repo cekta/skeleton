@@ -6,8 +6,17 @@ dev:
 build:
 	docker compose run --rm -it app composer build
 
+migrate:
+	docker compose up -d --wait --remove-orphans app
+	docker compose run --rm -it app composer migrate
+
+rollback:
+	docker compose up -d --wait --remove-orphans app
+	docker compose run --rm -it app composer rollback
+
 shell:
-	docker compose run --rm -it app sh
+	docker compose up -d --wait --remove-orphans app
+	docker compose exec app sh
 
 test:
 	docker compose run --rm -it app composer test

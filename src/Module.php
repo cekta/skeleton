@@ -6,6 +6,8 @@ declare(strict_types=1);
 namespace App;
 
 use Cekta\Framework\Logger\JSON;
+use Cekta\Framework\SystemClock;
+use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
@@ -47,6 +49,7 @@ readonly class Module implements \Cekta\Module\Module
             'entries' => [],
             'alias' => [
                 LoggerInterface::class => JSON::class,
+                ClockInterface::class => SystemClock::class
             ],
             'singletons' => [],
             'factories' => [],
