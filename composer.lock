@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d55154f6e26ba003020a9441736dfa1f",
+    "content-hash": "faff4f072ea198146a6b4176ab2e1ad8",
     "packages": [
         {
             "name": "brick/math",
@@ -178,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "3c0758339601c89cb16a6f4a05f31142131c2c91"
+                "reference": "a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/3c0758339601c89cb16a6f4a05f31142131c2c91",
-                "reference": "3c0758339601c89cb16a6f4a05f31142131c2c91",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c",
+                "reference": "a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-06-21T21:46:13+00:00"
+            "time": "2026-06-27T16:10:33+00:00"
         },
         {
             "name": "cekta/migrator",
@@ -367,12 +367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/queue-postgres.git",
-                "reference": "c2a8f3c14b07a89339be3778691618e49aa5ea98"
+                "reference": "7e7e4dbbbd810131b2c644c94b4e3985ea1d341e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/queue-postgres/zipball/c2a8f3c14b07a89339be3778691618e49aa5ea98",
-                "reference": "c2a8f3c14b07a89339be3778691618e49aa5ea98",
+                "url": "https://api.github.com/repos/cekta/queue-postgres/zipball/7e7e4dbbbd810131b2c644c94b4e3985ea1d341e",
+                "reference": "7e7e4dbbbd810131b2c644c94b4e3985ea1d341e",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +414,7 @@
                 "issues": "https://github.com/cekta/queue-postgres/issues",
                 "source": "https://github.com/cekta/queue-postgres/tree/master"
             },
-            "time": "2026-06-21T19:50:41+00:00"
+            "time": "2026-06-27T17:37:20+00:00"
         },
         {
             "name": "cekta/queue-postgres-module",
@@ -422,18 +422,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/queue-postgres-module.git",
-                "reference": "bd91d6d9100fff57e02698a7c168f333447bbd47"
+                "reference": "0ec5bf38a37024dc75c6024dd661201c0239a8ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/queue-postgres-module/zipball/bd91d6d9100fff57e02698a7c168f333447bbd47",
-                "reference": "bd91d6d9100fff57e02698a7c168f333447bbd47",
+                "url": "https://api.github.com/repos/cekta/queue-postgres-module/zipball/0ec5bf38a37024dc75c6024dd661201c0239a8ec",
+                "reference": "0ec5bf38a37024dc75c6024dd661201c0239a8ec",
                 "shasum": ""
             },
             "require": {
+                "cekta/framework": "dev-master",
                 "cekta/migrator": "dev-master",
                 "cekta/module": "dev-master",
                 "cekta/queue-postgres": "dev-master",
+                "ext-pcntl": "*",
                 "ext-pdo": "*",
                 "php": ">=8.3"
             },
@@ -465,7 +467,7 @@
                 "issues": "https://github.com/cekta/queue-postgres-module/issues",
                 "source": "https://github.com/cekta/queue-postgres-module/tree/master"
             },
-            "time": "2026-06-25T19:18:39+00:00"
+            "time": "2026-06-27T18:59:51+00:00"
         },
         {
             "name": "cekta/roadrunner",
@@ -1690,16 +1692,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.4.13",
+            "version": "v7.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "85095d2573eaefaf35e40b9513a9bf09f72cd217"
+                "reference": "92f58bc4bf97a92ed1b9f367f0cd44f20bde0e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/85095d2573eaefaf35e40b9513a9bf09f72cd217",
-                "reference": "85095d2573eaefaf35e40b9513a9bf09f72cd217",
+                "url": "https://api.github.com/repos/symfony/console/zipball/92f58bc4bf97a92ed1b9f367f0cd44f20bde0e87",
+                "reference": "92f58bc4bf97a92ed1b9f367f0cd44f20bde0e87",
                 "shasum": ""
             },
             "require": {
@@ -1764,7 +1766,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.4.13"
+                "source": "https://github.com/symfony/console/tree/v7.4.14"
             },
             "funding": [
                 {
@@ -1784,7 +1786,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-24T08:56:14+00:00"
+            "time": "2026-06-16T11:50:14+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2607,7 +2609,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-pcntl": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

@@ -1,21 +1,19 @@
 .PHONY: dev  shell refresh image build
 
 dev:
-	docker compose up --remove-orphans
+	docker compose up -d --remove-orphans
 
 build:
-	docker compose run --rm -it app composer build
+	docker compose exec app composer build
 
 migrate:
-	docker compose up -d --wait --remove-orphans app
-	docker compose run --rm -it app composer migrate
+	docker compose exec app composer migrate
 
 rollback:
 	docker compose up -d --wait --remove-orphans app
 	docker compose run --rm -it app composer rollback
 
 shell:
-	docker compose up -d --wait --remove-orphans app
 	docker compose exec app sh
 
 test:

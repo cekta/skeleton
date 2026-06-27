@@ -17,6 +17,7 @@ class Application
             'build' => new \Cekta\Framework\Dispatcher\Build(),
             'rr' => new \Cekta\RoadRunner\Dispatcher\RR(),
             'cli' => new \Cekta\CliSymfony\Dispatcher(),
+            'worker' => new \Cekta\Queue\Postgres\Module\Dispatcher(),
         ]);
         /**
          * @var string[] $env

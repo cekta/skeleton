@@ -1,12 +1,4 @@
 services:
-  builder:
-    build:
-      context: ./
-      target: dev
-    volumes:
-      - ./:/app
-    command: [ "builder" ]
-  
   app:
     build:
       context: ./
@@ -17,17 +9,8 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      builder:
-        condition: service_completed_successfully
       db:
         condition: service_healthy
-    healthcheck:
-      test: [ "CMD", "netstat -ltn | grep -c 8080" ]
-      interval: 60s
-      timeout: 1s
-      retries: 10
-      start_period: 10s
-      start_interval: 1s
     command: [ "rr", "serve" ]
 
   db:

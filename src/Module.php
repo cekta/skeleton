@@ -46,7 +46,9 @@ readonly class Module implements \Cekta\Module\Module
     public function onBuildDefinitions(mixed $cachedData): array
     {
         return [
-            'entries' => [],
+            'entries' => [
+                LoggerInterface::class,
+            ],
             'alias' => [
                 LoggerInterface::class => JSON::class,
                 ClockInterface::class => SystemClock::class
