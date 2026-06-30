@@ -1,5 +1,4 @@
 <?php
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 declare(strict_types=1);
 
@@ -25,7 +24,7 @@ class Application
         $env = getenv() + $_ENV;
         return $app->handle(
             $env['CEKTA_MODE'] ?? 'cli',
-            new \Cekta\Framework\Project(
+            new \Cekta\Framework\ProjectDefault(
                 [
                     new Module($env),
                     new \Cekta\RoadRunner\Module(),

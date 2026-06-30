@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5b296865e12a8dd273d92ecf55d1e85",
+    "content-hash": "22cc703f005da87352cc5058571eeeaf",
     "packages": [
         {
             "name": "brick/math",
@@ -178,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "ab975c0362208dfc20bbe210b8c5974aecd45d98"
+                "reference": "5df48e230c9ceec6dbb85bf057cbcbaa322711dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/ab975c0362208dfc20bbe210b8c5974aecd45d98",
-                "reference": "ab975c0362208dfc20bbe210b8c5974aecd45d98",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/5df48e230c9ceec6dbb85bf057cbcbaa322711dc",
+                "reference": "5df48e230c9ceec6dbb85bf057cbcbaa322711dc",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-06-30T19:58:06+00:00"
+            "time": "2026-06-30T20:45:19+00:00"
         },
         {
             "name": "cekta/migrator",

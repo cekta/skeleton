@@ -5,13 +5,14 @@ COPY --from=ghcr.io/roadrunner-server/roadrunner:latest /usr/bin/rr /usr/local/b
 RUN install-php-extensions \
       pdo \
       pdo_pgsql \
-      xdebug \
+      protobuf \
       pcntl \
       sockets # required for rr
 
 FROM base AS dev
 COPY docker/dev-entrypoint.sh /entrypoint.sh
 RUN install-php-extensions \
+        xdebug \
         @composer \
     && apk add --no-cache make \
     && chmod +x /entrypoint.sh
