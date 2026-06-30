@@ -5,12 +5,10 @@
   "prefer-stable": true,
   "require": {
     "cekta/framework": "@dev",
-    "cekta/migrator": "dev-master",
     "ext-pdo": "*",
+    "ext-pcntl": "*",
     "cekta/roadrunner": "dev-master",
-    "cekta/cli-symfony": "dev-master",
-    "cekta/queue-postgres-module": "dev-master",
-    "ext-pcntl": "*"
+    "cekta/cli-symfony": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^4.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "faff4f072ea198146a6b4176ab2e1ad8",
+    "content-hash": "f5b296865e12a8dd273d92ecf55d1e85",
     "packages": [
         {
             "name": "brick/math",
@@ -178,17 +178,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c"
+                "reference": "ab975c0362208dfc20bbe210b8c5974aecd45d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c",
-                "reference": "a5dbac3958eb8e855629ea55a8b08bdaebc4ce1c",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/ab975c0362208dfc20bbe210b8c5974aecd45d98",
+                "reference": "ab975c0362208dfc20bbe210b8c5974aecd45d98",
                 "shasum": ""
             },
             "require": {
                 "cekta/di": "dev-master",
+                "cekta/migrator": "dev-master",
                 "cekta/module": "dev-master",
+                "cekta/queue-postgres": "dev-master",
                 "ext-pcntl": "*",
                 "php": ">=8.2",
                 "psr/clock": "@stable",
@@ -222,7 +224,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-06-27T16:10:33+00:00"
+            "time": "2026-06-30T19:58:06+00:00"
         },
         {
             "name": "cekta/migrator",
@@ -415,59 +417,6 @@
                 "source": "https://github.com/cekta/queue-postgres/tree/master"
             },
             "time": "2026-06-27T17:37:20+00:00"
-        },
-        {
-            "name": "cekta/queue-postgres-module",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cekta/queue-postgres-module.git",
-                "reference": "0ec5bf38a37024dc75c6024dd661201c0239a8ec"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cekta/queue-postgres-module/zipball/0ec5bf38a37024dc75c6024dd661201c0239a8ec",
-                "reference": "0ec5bf38a37024dc75c6024dd661201c0239a8ec",
-                "shasum": ""
-            },
-            "require": {
-                "cekta/framework": "dev-master",
-                "cekta/migrator": "dev-master",
-                "cekta/module": "dev-master",
-                "cekta/queue-postgres": "dev-master",
-                "ext-pcntl": "*",
-                "ext-pdo": "*",
-                "php": ">=8.3"
-            },
-            "require-dev": {
-                "infection/infection": "@stable",
-                "phpstan/phpstan": "@stable",
-                "squizlabs/php_codesniffer": "@stable",
-                "testo/bridge-infection": "@stable",
-                "testo/testo": "@stable"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cekta\\Queue\\Postgres\\Module\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Evgeniy Kuvshinov",
-                    "email": "smpl@itmywork.com"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/cekta/queue-postgres-module/issues",
-                "source": "https://github.com/cekta/queue-postgres-module/tree/master"
-            },
-            "time": "2026-06-27T18:59:51+00:00"
         },
         {
             "name": "cekta/roadrunner",
@@ -1790,16 +1739,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.7.0",
+            "version": "v3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "50f59d1f3ca46d41ac911f97a78626b6756af35b"
+                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/50f59d1f3ca46d41ac911f97a78626b6756af35b",
-                "reference": "50f59d1f3ca46d41ac911f97a78626b6756af35b",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/f3202fa1b5097b0af062dc978b32ecf63404e31d",
+                "reference": "f3202fa1b5097b0af062dc978b32ecf63404e31d",
                 "shasum": ""
             },
             "require": {
@@ -1837,7 +1786,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.7.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.7.1"
             },
             "funding": [
                 {
@@ -1857,7 +1806,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-13T15:52:40+00:00"
+            "time": "2026-06-05T06:23:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2276,16 +2225,16 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v3.7.0",
+            "version": "v3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "d25d82433a80eba6aa0e6c24b61d7370d99e444a"
+                "reference": "c0a284bab1ed8aa0417e3d69250ab437739563a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d25d82433a80eba6aa0e6c24b61d7370d99e444a",
-                "reference": "d25d82433a80eba6aa0e6c24b61d7370d99e444a",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/c0a284bab1ed8aa0417e3d69250ab437739563a0",
+                "reference": "c0a284bab1ed8aa0417e3d69250ab437739563a0",
                 "shasum": ""
             },
             "require": {
@@ -2339,7 +2288,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/v3.7.0"
+                "source": "https://github.com/symfony/service-contracts/tree/v3.7.1"
             },
             "funding": [
                 {
@@ -2359,7 +2308,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-28T09:44:51+00:00"
+            "time": "2026-06-16T09:55:08+00:00"
         },
         {
             "name": "symfony/string",
@@ -2602,8 +2551,6 @@
     "stability-flags": {
         "cekta/cli-symfony": 20,
         "cekta/framework": 20,
-        "cekta/migrator": 20,
-        "cekta/queue-postgres-module": 20,
         "cekta/roadrunner": 20
     },
     "prefer-stable": true,

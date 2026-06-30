@@ -17,7 +17,7 @@ class Application
             'build' => new \Cekta\Framework\Dispatcher\Build(),
             'rr' => new \Cekta\RoadRunner\Dispatcher\RR(),
             'cli' => new \Cekta\CliSymfony\Dispatcher(),
-            'worker' => new \Cekta\Queue\Postgres\Module\Dispatcher(),
+            'worker' => new \Cekta\Framework\Queue\Dispatcher(),
         ]);
         /**
          * @var string[] $env
@@ -37,7 +37,7 @@ class Application
                             'make:migration' => MakeMigration::class
                         ]
                     ),
-                    new \Cekta\Queue\Postgres\Module\Module(),
+                    new \Cekta\Framework\Queue\Module(),
                 ],
                 __DIR__ . '/../runtime/AppContainer.php',
                 'App\\Runtime\\AppContainer',
