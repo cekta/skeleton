@@ -178,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/framework.git",
-                "reference": "5df48e230c9ceec6dbb85bf057cbcbaa322711dc"
+                "reference": "9fcd78e4063b528d87f32e36774ab34b1004b467"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/framework/zipball/5df48e230c9ceec6dbb85bf057cbcbaa322711dc",
-                "reference": "5df48e230c9ceec6dbb85bf057cbcbaa322711dc",
+                "url": "https://api.github.com/repos/cekta/framework/zipball/9fcd78e4063b528d87f32e36774ab34b1004b467",
+                "reference": "9fcd78e4063b528d87f32e36774ab34b1004b467",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,7 @@
                 "issues": "https://github.com/cekta/framework/issues",
                 "source": "https://github.com/cekta/framework/tree/master"
             },
-            "time": "2026-06-30T20:45:19+00:00"
+            "time": "2026-06-30T21:48:12+00:00"
         },
         {
             "name": "cekta/migrator",
@@ -369,12 +369,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cekta/queue-postgres.git",
-                "reference": "7e7e4dbbbd810131b2c644c94b4e3985ea1d341e"
+                "reference": "90b5a59742c4d73a731782d16545e100f0af56ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cekta/queue-postgres/zipball/7e7e4dbbbd810131b2c644c94b4e3985ea1d341e",
-                "reference": "7e7e4dbbbd810131b2c644c94b4e3985ea1d341e",
+                "url": "https://api.github.com/repos/cekta/queue-postgres/zipball/90b5a59742c4d73a731782d16545e100f0af56ba",
+                "reference": "90b5a59742c4d73a731782d16545e100f0af56ba",
                 "shasum": ""
             },
             "require": {
@@ -416,7 +416,7 @@
                 "issues": "https://github.com/cekta/queue-postgres/issues",
                 "source": "https://github.com/cekta/queue-postgres/tree/master"
             },
-            "time": "2026-06-27T17:37:20+00:00"
+            "time": "2026-06-30T21:39:43+00:00"
         },
         {
             "name": "cekta/roadrunner",
@@ -2404,11 +2404,11 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e5cc34d491a90e79c216d824f60fe21fd4d93bd6",
-                "reference": "e5cc34d491a90e79c216d824f60fe21fd4d93bd6",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4048833dd47b377287818841877fb3087289509c",
+                "reference": "4048833dd47b377287818841877fb3087289509c",
                 "shasum": ""
             },
             "require": {
@@ -2464,7 +2464,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-06-05T09:00:01+00:00"
+            "time": "2026-06-30T21:15:26+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
